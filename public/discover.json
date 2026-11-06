@@ -1,0 +1,1902 @@
+{
+  "version": "1.0.0",
+  "categories": {
+    "seerah": "السيرة النبوية",
+    "prophets": "الأنبياء",
+    "companions": "الصحابة وأمهات المؤمنين",
+    "ethics": "الأخلاق والآداب"
+  },
+  "articles": [
+    {
+      "id": "seerah-beginning",
+      "category": "seerah",
+      "title": "بدء الوحي",
+      "paragraphs": [
+        "تروي عائشة رضي الله عنها أن بداية الوحي كانت بالرؤيا الصالحة، ثم حب الخلاء والتعبد في غار حراء. وجاءه الملك هناك، ثم رجع إلى خديجة يرجف فؤاده.",
+        "طمأنته خديجة وذكرت صلته للرحم وإعانته للمحتاجين، وذهبت معه إلى ورقة بن نوفل. هذا ملخص للرواية، لا نص حديث حرفي."
+      ],
+      "summary": "تروي عائشة رضي الله عنها أن بداية الوحي كانت بالرؤيا الصالحة، ثم حب الخلاء والتعبد في غار حراء. وجاءه الملك هناك، ثم رجع إلى خديجة يرجف فؤاده.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3",
+          "url": "https://sunnah.com/bukhari:3"
+        }
+      ],
+      "order": 0,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "cf13c77fe84cf47574550982b44a83c5691fe76cf57c4fcaa7e2d790db4b22f5"
+    },
+    {
+      "id": "seerah-call",
+      "category": "seerah",
+      "title": "الدعوة وإنذار الأقربين",
+      "paragraphs": [
+        "أُمر النبي ﷺ بالإنذار، وجاء في سورة الشعراء الأمر بإنذار عشيرته الأقربين.",
+        "يقتصر الدرس على الأمر القرآني؛ لا يثبت ترتيبًا تفصيليًا لجميع وقائع الدعوة أو تواريخ متنازعًا فيها."
+      ],
+      "summary": "أُمر النبي ﷺ بالإنذار، وجاء في سورة الشعراء الأمر بإنذار عشيرته الأقربين.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 74:1–7",
+          "surah": 74,
+          "from": 1,
+          "to": 7,
+          "url": "https://quran.com/74/1-7"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 26:214",
+          "surah": 26,
+          "from": 214,
+          "to": 214,
+          "url": "https://quran.com/26/214"
+        }
+      ],
+      "order": 1,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "e916ea86ff81f5d60abfb6243f08e34edb45b6e232244c26bb2bf24686794dcf"
+    },
+    {
+      "id": "seerah-mercy",
+      "category": "seerah",
+      "title": "الثبات والرحمة عند الأذى",
+      "paragraphs": [
+        "سألت عائشة النبي ﷺ عن يوم أشد من يوم أحد، فذكر ما لقيه حين عرض نفسه على ابن عبد ياليل.",
+        "وفي الرواية خبر ملك الجبال ورجاء النبي أن يخرج الله من أصلابهم من يعبده. نقرأ الخبر في مصدره دون إضافة مشاهد أو حوارات."
+      ],
+      "summary": "سألت عائشة النبي ﷺ عن يوم أشد من يوم أحد، فذكر ما لقيه حين عرض نفسه على ابن عبد ياليل.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3231",
+          "url": "https://sunnah.com/bukhari:3231"
+        }
+      ],
+      "order": 2,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "099a6314127b4c5c33cb30df4eeaf9208c0b3519792f7577eca74b1afa3f5aae"
+    },
+    {
+      "id": "seerah-isra",
+      "category": "seerah",
+      "title": "الإسراء",
+      "paragraphs": [
+        "تذكر الآية الأولى من سورة الإسراء إسراء الله بعبده ليلًا من المسجد الحرام إلى المسجد الأقصى.",
+        "الإشارة هنا إلى أصل الإسراء كما في القرآن. لا يُحدد هذا الدرس تاريخًا لليلته أو أعمالًا خاصة بها دون دليل."
+      ],
+      "summary": "تذكر الآية الأولى من سورة الإسراء إسراء الله بعبده ليلًا من المسجد الحرام إلى المسجد الأقصى.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 17:1",
+          "surah": 17,
+          "from": 1,
+          "to": 1,
+          "url": "https://quran.com/17/1"
+        }
+      ],
+      "order": 3,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "5b98172fd5ea39bdd4655983a80db225b37877d528b6771511eddbf069d9e3a8"
+    },
+    {
+      "id": "seerah-hijra",
+      "category": "seerah",
+      "title": "الهجرة إلى المدينة",
+      "paragraphs": [
+        "تروي عائشة استعداد النبي ﷺ وأبي بكر للهجرة وخروجهما إلى المدينة. وورد في الصحيح حديث أبي بكر عن وجودهما في الغار.",
+        "تعرض الهجرة الأخذ بالأسباب مع التوكل على الله. لا نضيف قصة عن العنكبوت أو الحمام بوصفها من الرواية المشار إليها."
+      ],
+      "summary": "تروي عائشة استعداد النبي ﷺ وأبي بكر للهجرة وخروجهما إلى المدينة. وورد في الصحيح حديث أبي بكر عن وجودهما في الغار.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3905",
+          "url": "https://sunnah.com/bukhari:3905"
+        },
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3653",
+          "url": "https://sunnah.com/bukhari:3653"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 9:40",
+          "surah": 9,
+          "from": 40,
+          "to": 40,
+          "url": "https://quran.com/9/40"
+        }
+      ],
+      "order": 4,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "d979a2b5c68e67c31e6277be51436ea7f2c69e6844416b85ab0c26ef4b3cf804"
+    },
+    {
+      "id": "seerah-brotherhood",
+      "category": "seerah",
+      "title": "المؤاخاة في المدينة",
+      "paragraphs": [
+        "آخى النبي ﷺ بين المهاجرين والأنصار. ومن ذلك ما يرويه الصحيح عن عبد الرحمن بن عوف وسعد بن الربيع.",
+        "عرض سعد المعونة، ودعا له عبد الرحمن بالبركة وسأل عن السوق. يقدّم الخبر مثالًا للتكافل والسعي."
+      ],
+      "summary": "آخى النبي ﷺ بين المهاجرين والأنصار. ومن ذلك ما يرويه الصحيح عن عبد الرحمن بن عوف وسعد بن الربيع.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3780",
+          "url": "https://sunnah.com/bukhari:3780"
+        }
+      ],
+      "order": 5,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "f8af82c60683aadea946ecb7bffc3a33667d085bb82ea006f0fcf40b12631390"
+    },
+    {
+      "id": "seerah-badr",
+      "category": "seerah",
+      "title": "بدر في القرآن",
+      "paragraphs": [
+        "تذكر سورة آل عمران نصر الله للمؤمنين ببدر، وتربط ذلك بالتقوى والشكر.",
+        "هذا الدرس مدخل قرآني للحدث، ولا يتناول أعداد المشاركين أو التفاصيل العسكرية التي تحتاج مصادر إضافية."
+      ],
+      "summary": "تذكر سورة آل عمران نصر الله للمؤمنين ببدر، وتربط ذلك بالتقوى والشكر.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 3:123–127",
+          "surah": 3,
+          "from": 123,
+          "to": 127,
+          "url": "https://quran.com/3/123-127"
+        }
+      ],
+      "order": 6,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "8d85fdf9699bddccc072369a3c1c73e326262e10098c3d975b6a56cbe02249d0"
+    },
+    {
+      "id": "seerah-uhud",
+      "category": "seerah",
+      "title": "أحد ودروس الطاعة",
+      "paragraphs": [
+        "تعرض آيات آل عمران ما وقع يوم أحد، وتذكر التنازع ومخالفة الأمر بعد ظهور ما يحب المؤمنون.",
+        "وتذكر العفو وفضل الله. يُقرأ الحدث في سياق الآيات دون لوم أشخاص من خارج ما يثبته المصدر."
+      ],
+      "summary": "تعرض آيات آل عمران ما وقع يوم أحد، وتذكر التنازع ومخالفة الأمر بعد ظهور ما يحب المؤمنون.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 3:121–122",
+          "surah": 3,
+          "from": 121,
+          "to": 122,
+          "url": "https://quran.com/3/121-122"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 3:152–155",
+          "surah": 3,
+          "from": 152,
+          "to": 155,
+          "url": "https://quran.com/3/152-155"
+        }
+      ],
+      "order": 7,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "15a4e0cd996a39c932f7f30e78d4c469f64e17282a9107d0fa2c46c6ce7ec4ef"
+    },
+    {
+      "id": "seerah-hudaybiyah",
+      "category": "seerah",
+      "title": "صلح الحديبية",
+      "paragraphs": [
+        "يسرد الصحيح خروج النبي ﷺ وأصحابه، وما جرى من تفاوض وشروط للصلح مع قريش في الحديبية.",
+        "الرواية طويلة وتحتاج قراءة متأنية؛ هذا مدخل لها لا اختزال لجميع أحكام المعاهدات أو تطبيقها على واقع معاصر."
+      ],
+      "summary": "يسرد الصحيح خروج النبي ﷺ وأصحابه، وما جرى من تفاوض وشروط للصلح مع قريش في الحديبية.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 2731",
+          "url": "https://sunnah.com/bukhari:2731"
+        },
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 2732",
+          "url": "https://sunnah.com/bukhari:2732"
+        }
+      ],
+      "order": 8,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "2eb74b3df9800068226c6a49791ab3456792c6c65eb5c221f01d771261a6cc7b"
+    },
+    {
+      "id": "seerah-conquest",
+      "category": "seerah",
+      "title": "فتح مكة",
+      "paragraphs": [
+        "روى عبد الله بن مغفل أنه رأى النبي ﷺ يوم فتح مكة على ناقته يقرأ سورة الفتح.",
+        "الدرس يثبت هذا المشهد من الرواية المشار إليها، ولا ينسب خطبًا أو ألفاظ عفو مشهورة إلى هذا الحديث ما لم ترد فيه."
+      ],
+      "summary": "روى عبد الله بن مغفل أنه رأى النبي ﷺ يوم فتح مكة على ناقته يقرأ سورة الفتح.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 4281",
+          "url": "https://sunnah.com/bukhari:4281"
+        }
+      ],
+      "order": 9,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "fcccc48c65475ba16e1c8e45790ab061262e1178e0cd16c8a9aa90a3b1159d31"
+    },
+    {
+      "id": "seerah-hajj",
+      "category": "seerah",
+      "title": "حجة النبي ﷺ",
+      "paragraphs": [
+        "وصف جابر رضي الله عنه حجة النبي ﷺ وصفًا طويلًا في صحيح مسلم، يتضمن انتقاله بين المشاعر وتعليمه للناس.",
+        "يصلح الخبر أصلًا لدراسة الحجة. أما الأحكام التفصيلية وأعذار الحجاج فتحتاج الرجوع لأهل العلم."
+      ],
+      "summary": "وصف جابر رضي الله عنه حجة النبي ﷺ وصفًا طويلًا في صحيح مسلم، يتضمن انتقاله بين المشاعر وتعليمه للناس.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح مسلم 1218a",
+          "url": "https://sunnah.com/muslim:1218a"
+        }
+      ],
+      "order": 10,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "14cf31e6862e9e096b1fd391b40ac40a72e1a28f0a7a14da15fd6b03b812b7b6"
+    },
+    {
+      "id": "seerah-character",
+      "category": "seerah",
+      "title": "شمائل وأخلاق النبي ﷺ",
+      "paragraphs": [
+        "روى عبد الله بن عمرو أن النبي ﷺ لم يكن فاحشًا ولا متفحشًا، وأنه كان يذكر فضل حسن الخلق.",
+        "نتعلم من المصدر العناية بالأخلاق واللسان. هذا ملخص تعليمي وليس اقتباسًا مطولًا من شرح حديث معاصر."
+      ],
+      "summary": "روى عبد الله بن عمرو أن النبي ﷺ لم يكن فاحشًا ولا متفحشًا، وأنه كان يذكر فضل حسن الخلق.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3559",
+          "url": "https://sunnah.com/bukhari:3559"
+        }
+      ],
+      "order": 11,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "586a4ffcb8a4c779d790160e8f99813f103fe43cf49ea2e9ff61b4b2a3bd197c"
+    },
+    {
+      "id": "seerah-final-days",
+      "category": "seerah",
+      "title": "مرضه ووفاته ﷺ",
+      "paragraphs": [
+        "يروي أنس رضي الله عنه اشتداد مرض النبي ﷺ وحديثه مع فاطمة رضي الله عنها، ثم حزنها عند وفاته ودفنه.",
+        "يُحفظ للحدث وقاره، ولا تضاف وصايا أو مشاهد أو تواريخ تفصيلية لم تثبتها هذه الرواية."
+      ],
+      "summary": "يروي أنس رضي الله عنه اشتداد مرض النبي ﷺ وحديثه مع فاطمة رضي الله عنها، ثم حزنها عند وفاته ودفنه.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 4462",
+          "url": "https://sunnah.com/bukhari:4462"
+        }
+      ],
+      "order": 12,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "853f53209393e01c596ea4b384a12884703d433074006e3cdeaee46ff1d50c11"
+    },
+    {
+      "id": "prophets-adam",
+      "category": "prophets",
+      "title": "آدم عليه السلام",
+      "paragraphs": [
+        "تذكر سورة البقرة تعليم الله آدم الأسماء، وأمر الملائكة بالسجود له، وامتناع إبليس. وتعرض سكن آدم وزوجه الجنة ثم الهبوط إلى الأرض.",
+        "وتذكر الآيات تلقّي آدم كلمات من ربه وقبول توبته. لا نضيف اسمًا للشجرة أو تفاصيل لم تسمها الآيات."
+      ],
+      "summary": "تذكر سورة البقرة تعليم الله آدم الأسماء، وأمر الملائكة بالسجود له، وامتناع إبليس. وتعرض سكن آدم وزوجه الجنة ثم الهبوط إلى الأرض.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 2:30–39",
+          "surah": 2,
+          "from": 30,
+          "to": 39,
+          "url": "https://quran.com/2/30-39"
+        }
+      ],
+      "order": 0,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "2d034b8901af1c1bfb75a8c1f75a1138461de905bc99a7dc8a7aac9b9d38bab7"
+    },
+    {
+      "id": "prophets-idris",
+      "category": "prophets",
+      "title": "إدريس عليه السلام",
+      "paragraphs": [
+        "ذكره القرآن في سورة مريم، ووصفه بالصدق والنبوة، وذكر رفعه مكانًا عليًّا.",
+        "التعريف هنا يقف عند النص، فلا يجزم بقصص عن مهنته أو رحلاته لم تذكرها هذه الآيات."
+      ],
+      "summary": "ذكره القرآن في سورة مريم، ووصفه بالصدق والنبوة، وذكر رفعه مكانًا عليًّا.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 19:56–57",
+          "surah": 19,
+          "from": 56,
+          "to": 57,
+          "url": "https://quran.com/19/56-57"
+        }
+      ],
+      "order": 1,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "04a15fab4d9d1dbf5e919ea00b645b73d01daa094dbb939793f364fa1cc6480b"
+    },
+    {
+      "id": "prophets-nuh",
+      "category": "prophets",
+      "title": "نوح عليه السلام",
+      "paragraphs": [
+        "أرسل الله نوحًا إلى قومه يدعوهم إلى عبادته ويحذرهم. تعرض سورة هود دعوته وصنع الفلك ونجاة من آمن معه.",
+        "وتفصّل سورة نوح وجوه دعوته لقومه. تُقرأ القصة في سياقها دون إضافة حوارات أو أوصاف للفلك لم يثبتها المصدر."
+      ],
+      "summary": "أرسل الله نوحًا إلى قومه يدعوهم إلى عبادته ويحذرهم. تعرض سورة هود دعوته وصنع الفلك ونجاة من آمن معه.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 11:25–49",
+          "surah": 11,
+          "from": 25,
+          "to": 49,
+          "url": "https://quran.com/11/25-49"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 71:1–28",
+          "surah": 71,
+          "from": 1,
+          "to": 28,
+          "url": "https://quran.com/71/1-28"
+        }
+      ],
+      "order": 2,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "1c93d6601082c76303f2aa7ff67dd6167c72ba35fa089f7e528aa9653ffb5b17"
+    },
+    {
+      "id": "prophets-hud",
+      "category": "prophets",
+      "title": "هود عليه السلام",
+      "paragraphs": [
+        "أرسل إلى عاد، فدعاهم إلى عبادة الله والاستغفار والتوبة. لم يطلب على دعوته أجرًا منهم.",
+        "تذكر سورة هود موقف قومه ونجاة هود والذين آمنوا معه برحمة الله. لا نحدد مواقع أثرية أو تواريخ من عندنا."
+      ],
+      "summary": "أرسل إلى عاد، فدعاهم إلى عبادة الله والاستغفار والتوبة. لم يطلب على دعوته أجرًا منهم.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 11:50–60",
+          "surah": 11,
+          "from": 50,
+          "to": 60,
+          "url": "https://quran.com/11/50-60"
+        }
+      ],
+      "order": 3,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "34ae43dfc09bb710444d901fdac7610e749ba634431250e21553f1369f128445"
+    },
+    {
+      "id": "prophets-salih",
+      "category": "prophets",
+      "title": "صالح عليه السلام",
+      "paragraphs": [
+        "دعا ثمود إلى عبادة الله والاستغفار، وذكّرهم بما أنعم الله عليهم. جاءت الناقة آية لقومه، وحذرهم من إيذائها.",
+        "تعرض الآيات مخالفة قومه ونجاة صالح والذين آمنوا معه. يقتصر الملخص على ما جاء في النص."
+      ],
+      "summary": "دعا ثمود إلى عبادة الله والاستغفار، وذكّرهم بما أنعم الله عليهم. جاءت الناقة آية لقومه، وحذرهم من إيذائها.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 11:61–68",
+          "surah": 11,
+          "from": 61,
+          "to": 68,
+          "url": "https://quran.com/11/61-68"
+        }
+      ],
+      "order": 4,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "a95b274d91cf647165b9dcc375dd845dd1a262db2bf0df169629bdf4706036cc"
+    },
+    {
+      "id": "prophets-ibrahim",
+      "category": "prophets",
+      "title": "إبراهيم عليه السلام",
+      "paragraphs": [
+        "تعرض سورة الأنعام محاجّة إبراهيم لقومه في عبادة غير الله، وإعلانه التوحيد والبراءة من الشرك.",
+        "وتذكر سورة البقرة رفع إبراهيم وإسماعيل قواعد البيت ودعاءهما. هذه مداخل لقراءة قصته، وليست حصرًا لكل مواضعها."
+      ],
+      "summary": "تعرض سورة الأنعام محاجّة إبراهيم لقومه في عبادة غير الله، وإعلانه التوحيد والبراءة من الشرك.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 6:74–83",
+          "surah": 6,
+          "from": 74,
+          "to": 83,
+          "url": "https://quran.com/6/74-83"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 2:127–129",
+          "surah": 2,
+          "from": 127,
+          "to": 129,
+          "url": "https://quran.com/2/127-129"
+        }
+      ],
+      "order": 5,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "21cb917ba9cb9bd072542bb5921da4ff1ff0876fdaca5c1246def09cf1b2029b"
+    },
+    {
+      "id": "prophets-lut",
+      "category": "prophets",
+      "title": "لوط عليه السلام",
+      "paragraphs": [
+        "تروي سورة هود مجيء الرسل إلى لوط وما لقيه من قومه، ثم إخباره بالنجاة مع أهله وفق ما أمر به.",
+        "تُذكر أحداث العقوبة كما يوردها القرآن، دون صور عنيفة أو تفاصيل روائية غير مسندة."
+      ],
+      "summary": "تروي سورة هود مجيء الرسل إلى لوط وما لقيه من قومه، ثم إخباره بالنجاة مع أهله وفق ما أمر به.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 11:77–83",
+          "surah": 11,
+          "from": 77,
+          "to": 83,
+          "url": "https://quran.com/11/77-83"
+        }
+      ],
+      "order": 6,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "a399d8599c51703f33aa1c2108f628cd9b59f21b481faf27bd0892cceb530bd0"
+    },
+    {
+      "id": "prophets-ismail",
+      "category": "prophets",
+      "title": "إسماعيل عليه السلام",
+      "paragraphs": [
+        "وصفه القرآن بصدق الوعد والرسالة والنبوة، وبأمر أهله بالصلاة والزكاة.",
+        "وتذكر سورة البقرة مشاركته إبراهيم في رفع قواعد البيت. لا نجزم بتفاصيل مختلف فيها لا يحتاجها هذا التعريف."
+      ],
+      "summary": "وصفه القرآن بصدق الوعد والرسالة والنبوة، وبأمر أهله بالصلاة والزكاة.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 19:54–55",
+          "surah": 19,
+          "from": 54,
+          "to": 55,
+          "url": "https://quran.com/19/54-55"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 2:127–129",
+          "surah": 2,
+          "from": 127,
+          "to": 129,
+          "url": "https://quran.com/2/127-129"
+        }
+      ],
+      "order": 7,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "27dead42707d8241e3fb519423ab810a9d6475d2bd861396da302e848cc1f592"
+    },
+    {
+      "id": "prophets-ishaq",
+      "category": "prophets",
+      "title": "إسحاق عليه السلام",
+      "paragraphs": [
+        "وردت بشارة إبراهيم بإسحاق، ووصفه بأنه نبي من الصالحين. وتذكر سورة الصافات البركة على إبراهيم وإسحاق.",
+        "التعريف موجز بحسب هذه المواضع؛ لا يضيف عمرًا أو سيرة زمنية لا يثبتها المرجع."
+      ],
+      "summary": "وردت بشارة إبراهيم بإسحاق، ووصفه بأنه نبي من الصالحين. وتذكر سورة الصافات البركة على إبراهيم وإسحاق.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 37:112–113",
+          "surah": 37,
+          "from": 112,
+          "to": 113,
+          "url": "https://quran.com/37/112-113"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 11:71–73",
+          "surah": 11,
+          "from": 71,
+          "to": 73,
+          "url": "https://quran.com/11/71-73"
+        }
+      ],
+      "order": 8,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "45c9954a355aad6284187da01b2fdab012a7e209c9cd5e2206b1212b547f8053"
+    },
+    {
+      "id": "prophets-yaqub",
+      "category": "prophets",
+      "title": "يعقوب عليه السلام",
+      "paragraphs": [
+        "تظهر في سورة يوسف مواقف يعقوب عند فراق يوسف وأخيه، وحزنه وشكواه إلى الله ورجائه في رحمته.",
+        "أمر أبناءه بالبحث عن يوسف وأخيه وألا ييأسوا. ويُقرأ ذلك مع بقية القصة لفهم السياق."
+      ],
+      "summary": "تظهر في سورة يوسف مواقف يعقوب عند فراق يوسف وأخيه، وحزنه وشكواه إلى الله ورجائه في رحمته.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 12:83–87",
+          "surah": 12,
+          "from": 83,
+          "to": 87,
+          "url": "https://quran.com/12/83-87"
+        }
+      ],
+      "order": 9,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "d21c4a572275551239486ccb834476cb0e719028cfb8708941a2d8d9c847c641"
+    },
+    {
+      "id": "prophets-yusuf",
+      "category": "prophets",
+      "title": "يوسف عليه السلام",
+      "paragraphs": [
+        "تسرد سورة يوسف رؤياه، وما لقيه من إخوته، ثم ابتلاءه وسجنه، وتأويله الرؤى، وما انتهى إليه أمره.",
+        "وفي ختام القصة يتحدث إلى إخوته بالعفو، ويلتقي بأهله. الملخص لا يضيف أسماء أو حوارات لم تذكرها السورة."
+      ],
+      "summary": "تسرد سورة يوسف رؤياه، وما لقيه من إخوته، ثم ابتلاءه وسجنه، وتأويله الرؤى، وما انتهى إليه أمره.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 12:4–101",
+          "surah": 12,
+          "from": 4,
+          "to": 101,
+          "url": "https://quran.com/12/4-101"
+        }
+      ],
+      "order": 10,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "7a8fa035efe90a8bcf2bab0c8141489fe33623825a26da505186945dd6456c2a"
+    },
+    {
+      "id": "prophets-ayyub",
+      "category": "prophets",
+      "title": "أيوب عليه السلام",
+      "paragraphs": [
+        "تذكر سورة الأنبياء نداء أيوب ربه عند الضر، واستجابة الله له وكشف ما به من ضر.",
+        "وتذكر سورة ص صبره. لا تُسرد هنا أوصاف لمرضه أو مدة له من روايات غير مثبتة في المراجع المشار إليها."
+      ],
+      "summary": "تذكر سورة الأنبياء نداء أيوب ربه عند الضر، واستجابة الله له وكشف ما به من ضر.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 21:83–84",
+          "surah": 21,
+          "from": 83,
+          "to": 84,
+          "url": "https://quran.com/21/83-84"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 38:41–44",
+          "surah": 38,
+          "from": 41,
+          "to": 44,
+          "url": "https://quran.com/38/41-44"
+        }
+      ],
+      "order": 11,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "ebc5df027d82cbb824b7ce78cd5c1ea4039d804957e122f02a07fc16c10ecc53"
+    },
+    {
+      "id": "prophets-shuayb",
+      "category": "prophets",
+      "title": "شعيب عليه السلام",
+      "paragraphs": [
+        "دعا أهل مدين إلى عبادة الله، وإيفاء المكيال والميزان بالقسط، وعدم بخس الناس أشياءهم.",
+        "تربط القصة بين التوحيد والعدل في التعامل، وتعرض رد قومه وما آل إليه أمرهم."
+      ],
+      "summary": "دعا أهل مدين إلى عبادة الله، وإيفاء المكيال والميزان بالقسط، وعدم بخس الناس أشياءهم.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 11:84–95",
+          "surah": 11,
+          "from": 84,
+          "to": 95,
+          "url": "https://quran.com/11/84-95"
+        }
+      ],
+      "order": 12,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "8444cd44f1128e61671ab8e839ea292cc30cc2f24ebe1c0e0bcb7352dd78a807"
+    },
+    {
+      "id": "prophets-musa",
+      "category": "prophets",
+      "title": "موسى عليه السلام",
+      "paragraphs": [
+        "تذكر سورة طه نداء الله موسى، وإرساله إلى فرعون، وسؤاله أن يشد الله أزره بأخيه هارون.",
+        "وتعرض دعوته ومواجهة السحرة ونجاة بني إسرائيل. التفاصيل الكثيرة لقصته موزعة في القرآن؛ هذا مدخل للقراءة لا سرد شامل."
+      ],
+      "summary": "تذكر سورة طه نداء الله موسى، وإرساله إلى فرعون، وسؤاله أن يشد الله أزره بأخيه هارون.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 20:9–98",
+          "surah": 20,
+          "from": 9,
+          "to": 98,
+          "url": "https://quran.com/20/9-98"
+        }
+      ],
+      "order": 13,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "03a24499e46d8942c2f0651eb53aae7a3dee245b846df4527480304e19ea3f47"
+    },
+    {
+      "id": "prophets-harun",
+      "category": "prophets",
+      "title": "هارون عليه السلام",
+      "paragraphs": [
+        "سأل موسى ربه أن يجعل هارون وزيرًا له ويشركه في أمره، فأجابه الله.",
+        "وتعرض سورة طه موقف هارون من عبادة العجل ومحاولته نهي قومه عنها، فيُقرأ قوله في سياقه."
+      ],
+      "summary": "سأل موسى ربه أن يجعل هارون وزيرًا له ويشركه في أمره، فأجابه الله.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 20:29–36",
+          "surah": 20,
+          "from": 29,
+          "to": 36,
+          "url": "https://quran.com/20/29-36"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 20:90–94",
+          "surah": 20,
+          "from": 90,
+          "to": 94,
+          "url": "https://quran.com/20/90-94"
+        }
+      ],
+      "order": 14,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "ea8f026d6b5dcb18f3f04216f8650d4ec2a58ffdeeb4e3c9626c2c37960d85d0"
+    },
+    {
+      "id": "prophets-dawud",
+      "category": "prophets",
+      "title": "داود عليه السلام",
+      "paragraphs": [
+        "وصفه القرآن بكثرة الرجوع إلى الله، وذكر تسبيح الجبال والطير معه، وإيتاءه الحكمة وفصل الخطاب.",
+        "لا تُضاف إلى القصة روايات تمس مقام النبوة دون دليل؛ المرجع المباشر هنا آيات سورة ص."
+      ],
+      "summary": "وصفه القرآن بكثرة الرجوع إلى الله، وذكر تسبيح الجبال والطير معه، وإيتاءه الحكمة وفصل الخطاب.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 38:17–26",
+          "surah": 38,
+          "from": 17,
+          "to": 26,
+          "url": "https://quran.com/38/17-26"
+        }
+      ],
+      "order": 15,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "34407e093999f9951096571c5ec3aacfd79945017bde9070c17ff61dd539f5d9"
+    },
+    {
+      "id": "prophets-sulayman",
+      "category": "prophets",
+      "title": "سليمان عليه السلام",
+      "paragraphs": [
+        "تذكر سورة النمل علم داود وسليمان، وتعليم سليمان منطق الطير، وقصة النملة وشكره لله.",
+        "ثم تروي خبر الهدهد وملكة سبأ وما انتهى إليه أمرها. لا نضيف اسمًا للملكة أو أوصافًا لقصرها خارج ما ذكرته الآيات."
+      ],
+      "summary": "تذكر سورة النمل علم داود وسليمان، وتعليم سليمان منطق الطير، وقصة النملة وشكره لله.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 27:15–44",
+          "surah": 27,
+          "from": 15,
+          "to": 44,
+          "url": "https://quran.com/27/15-44"
+        }
+      ],
+      "order": 16,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "726625e4b0a6cf3e8102036a2af397c51f306c46cb5632d7c2fe81eca79f0da0"
+    },
+    {
+      "id": "prophets-ilyas",
+      "category": "prophets",
+      "title": "إلياس عليه السلام",
+      "paragraphs": [
+        "ذكره القرآن ضمن المرسلين، وذكر إنكاره على قومه دعوتهم بعلًا وتركهم عبادة الله.",
+        "وتختم الآيات خبره بالثناء عليه. لا نحدد هوية تاريخية أو مكانًا لا ينص عليه المرجع."
+      ],
+      "summary": "ذكره القرآن ضمن المرسلين، وذكر إنكاره على قومه دعوتهم بعلًا وتركهم عبادة الله.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 37:123–132",
+          "surah": 37,
+          "from": 123,
+          "to": 132,
+          "url": "https://quran.com/37/123-132"
+        }
+      ],
+      "order": 17,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "f81e728016522cbd3cfa018b064d028c1b4422fce4b0ed626da8b3874a530b99"
+    },
+    {
+      "id": "prophets-alyasa",
+      "category": "prophets",
+      "title": "اليسع عليه السلام",
+      "paragraphs": [
+        "ورد اسم اليسع في سورة الأنعام مع أنبياء فضّلهم الله، وفي سورة ص ضمن الأخيار.",
+        "لا يذكر هذان الموضعان قصة مفصلة له؛ لذلك لا ننشئ قصة أو نسبًا أو أحداثًا من دون دليل."
+      ],
+      "summary": "ورد اسم اليسع في سورة الأنعام مع أنبياء فضّلهم الله، وفي سورة ص ضمن الأخيار.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 6:86",
+          "surah": 6,
+          "from": 86,
+          "to": 86,
+          "url": "https://quran.com/6/86"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 38:48",
+          "surah": 38,
+          "from": 48,
+          "to": 48,
+          "url": "https://quran.com/38/48"
+        }
+      ],
+      "order": 18,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "82d9219df625594bffb54c618371018cc8c3cbbc7e69d256263e02c5b9076515"
+    },
+    {
+      "id": "prophets-yunus",
+      "category": "prophets",
+      "title": "يونس عليه السلام",
+      "paragraphs": [
+        "تذكر سورة الصافات خبر يونس في السفينة ثم التقام الحوت له ونجاته، وإرساله إلى قوم آمنوا.",
+        "وتذكر سورة الأنبياء دعاءه واستجابة الله له. لا يضاف وصف لما داخل الحوت أو زمن للبثه لم تثبته الآيات."
+      ],
+      "summary": "تذكر سورة الصافات خبر يونس في السفينة ثم التقام الحوت له ونجاته، وإرساله إلى قوم آمنوا.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 37:139–148",
+          "surah": 37,
+          "from": 139,
+          "to": 148,
+          "url": "https://quran.com/37/139-148"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 21:87–88",
+          "surah": 21,
+          "from": 87,
+          "to": 88,
+          "url": "https://quran.com/21/87-88"
+        }
+      ],
+      "order": 19,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "21f51e25b4dd48db6d0ed0dcd27e1fc529020d8adc431787a21c855e4ff3ee46"
+    },
+    {
+      "id": "prophets-zakariya",
+      "category": "prophets",
+      "title": "زكريا عليه السلام",
+      "paragraphs": [
+        "تفتتح سورة مريم خبره بدعائه الخفي، وسؤاله ربه ولدًا رغم كبر سنه، وبشارته بيحيى.",
+        "تعرض القصة قدرة الله ورحمته بعبده، دون تحديد سن أو تواريخ لا يذكرها النص."
+      ],
+      "summary": "تفتتح سورة مريم خبره بدعائه الخفي، وسؤاله ربه ولدًا رغم كبر سنه، وبشارته بيحيى.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 19:2–11",
+          "surah": 19,
+          "from": 2,
+          "to": 11,
+          "url": "https://quran.com/19/2-11"
+        }
+      ],
+      "order": 20,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "c76c0d5e8ea30958638255f67bf7ef17cc3f919af94ab3ea31e37a2dbc29a4a2"
+    },
+    {
+      "id": "prophets-yahya",
+      "category": "prophets",
+      "title": "يحيى عليه السلام",
+      "paragraphs": [
+        "تذكر سورة مريم إيتاء يحيى الحكم صبيًا، ووصفه بالتقوى والبر بوالديه، وأنه لم يكن جبارًا عصيًا.",
+        "يقتصر هذا التعريف على ما أثبته القرآن، دون استكماله بقصص تاريخية غير محققة."
+      ],
+      "summary": "تذكر سورة مريم إيتاء يحيى الحكم صبيًا، ووصفه بالتقوى والبر بوالديه، وأنه لم يكن جبارًا عصيًا.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 19:12–15",
+          "surah": 19,
+          "from": 12,
+          "to": 15,
+          "url": "https://quran.com/19/12-15"
+        }
+      ],
+      "order": 21,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "0b64f1eb766ad7089ede3216140bf1032f2d4518ce221d610ab6349255295552"
+    },
+    {
+      "id": "prophets-isa",
+      "category": "prophets",
+      "title": "عيسى عليه السلام",
+      "paragraphs": [
+        "تذكر سورة آل عمران بشارة مريم بعيسى ابن مريم، وتعليمه الكتاب والحكمة والتوراة والإنجيل، ورسالته إلى بني إسرائيل.",
+        "وتنسب الآيات معجزاته إلى إذن الله. يُرجع إلى النص في التعريف بمقامه ورسالته دون تصوير للأنبياء أو اختلاق حوارات."
+      ],
+      "summary": "تذكر سورة آل عمران بشارة مريم بعيسى ابن مريم، وتعليمه الكتاب والحكمة والتوراة والإنجيل، ورسالته إلى بني إسرائيل.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 3:45–51",
+          "surah": 3,
+          "from": 45,
+          "to": 51,
+          "url": "https://quran.com/3/45-51"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 19:16–36",
+          "surah": 19,
+          "from": 16,
+          "to": 36,
+          "url": "https://quran.com/19/16-36"
+        }
+      ],
+      "order": 22,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "2ca0ef5b114090dcac93a7d10ef4eb5894213e6cfe6e6df10a61361e3a149e14"
+    },
+    {
+      "id": "prophets-dhulkifl",
+      "category": "prophets",
+      "title": "ذو الكفل",
+      "paragraphs": [
+        "ذُكر ذو الكفل مع الصابرين والصالحين في سورة الأنبياء، ومع الأخيار في سورة ص.",
+        "لا تفصّل هذه الآيات قصته، ولا نسوق هنا حكايات غير ثابتة. توجد مناقشات عند أهل العلم في تفاصيل التعريف به، فلا نجزم بما لم يرد في النص."
+      ],
+      "summary": "ذُكر ذو الكفل مع الصابرين والصالحين في سورة الأنبياء، ومع الأخيار في سورة ص.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 21:85–86",
+          "surah": 21,
+          "from": 85,
+          "to": 86,
+          "url": "https://quran.com/21/85-86"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 38:48",
+          "surah": 38,
+          "from": 48,
+          "to": 48,
+          "url": "https://quran.com/38/48"
+        }
+      ],
+      "order": 23,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "e44e3ab41c63a846396659e538733f8ee837480e0b3e75a4fa63643328677a07"
+    },
+    {
+      "id": "prophets-muhammad",
+      "category": "prophets",
+      "title": "محمد ﷺ",
+      "paragraphs": [
+        "يصف القرآن محمدًا ﷺ برسول الله وخاتم النبيين، ويأمر المؤمنين بالاقتداء به.",
+        "يمكن متابعة وحدات السيرة في التطبيق من بدء الوحي إلى الهجرة وأحداث المدينة، مع المراجع لكل وحدة."
+      ],
+      "summary": "يصف القرآن محمدًا ﷺ برسول الله وخاتم النبيين، ويأمر المؤمنين بالاقتداء به.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 33:21",
+          "surah": 33,
+          "from": 21,
+          "to": 21,
+          "url": "https://quran.com/33/21"
+        },
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 33:40",
+          "surah": 33,
+          "from": 40,
+          "to": 40,
+          "url": "https://quran.com/33/40"
+        }
+      ],
+      "order": 24,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "b546343b7a2e66c7b0a790ae8ccaa2c6ff64210487fd5f008000e3e24431dd63"
+    },
+    {
+      "id": "companions-abu-bakr",
+      "category": "companions",
+      "title": "أبو بكر الصديق رضي الله عنه",
+      "paragraphs": [
+        "صحب النبي ﷺ في الهجرة، وروى خبرهما في الغار وما قاله له النبي حين خشي أن يراهما المشركون.",
+        "يمكن قراءة تفاصيل الهجرة في رواية عائشة. لا يختزل فضل الصحابي في حادثة واحدة."
+      ],
+      "summary": "صحب النبي ﷺ في الهجرة، وروى خبرهما في الغار وما قاله له النبي حين خشي أن يراهما المشركون.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3653",
+          "url": "https://sunnah.com/bukhari:3653"
+        },
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3905",
+          "url": "https://sunnah.com/bukhari:3905"
+        }
+      ],
+      "order": 0,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "ff35fe9ea2338c399d9ae286f6acfe649d939f2c1e308eb0c66a450b61d9c845"
+    },
+    {
+      "id": "companions-umar",
+      "category": "companions",
+      "title": "عمر بن الخطاب رضي الله عنه",
+      "paragraphs": [
+        "وردت في الصحيح أخبار عن مناقب عمر ومكانته، ومنها رواية سعد بن أبي وقاص في دخوله على النبي ﷺ.",
+        "يعرض المصدر ثناء النبي عليه في سياق الرواية. لا تُنسب إليه حكايات العدالة المتداولة دون سند محدد."
+      ],
+      "summary": "وردت في الصحيح أخبار عن مناقب عمر ومكانته، ومنها رواية سعد بن أبي وقاص في دخوله على النبي ﷺ.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3683",
+          "url": "https://sunnah.com/bukhari:3683"
+        }
+      ],
+      "order": 1,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "f492aca0899f2c1dfdaccab86c0dfdd8081fc6ae2a4a5d05bd8aaf07f0145bdd"
+    },
+    {
+      "id": "companions-uthman",
+      "category": "companions",
+      "title": "عثمان بن عفان رضي الله عنه",
+      "paragraphs": [
+        "تروي عائشة خبر استئذان عثمان على النبي ﷺ، وما ذكره النبي في شأن حيائه واستحياء الملائكة منه.",
+        "المادة مدخل إلى إحدى مناقبه في صحيح مسلم، وليست سيرة سياسية مختصرة أو عرضًا لأحداث الفتنة."
+      ],
+      "summary": "تروي عائشة خبر استئذان عثمان على النبي ﷺ، وما ذكره النبي في شأن حيائه واستحياء الملائكة منه.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح مسلم 2401",
+          "url": "https://sunnah.com/muslim:2401"
+        }
+      ],
+      "order": 2,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "a23040f1287025c96d2ff39d5cd4667fa8af1f5f3f1519945ddcb3ca5aa7ae16"
+    },
+    {
+      "id": "companions-ali",
+      "category": "companions",
+      "title": "علي بن أبي طالب رضي الله عنه",
+      "paragraphs": [
+        "يروي سهل بن سعد إعطاء النبي ﷺ الراية لعلي، ودعاءه له وتوجيهه عند خيبر.",
+        "تقرأ الرواية بتمامها لفهم فضل الدعوة والهداية، دون إسقاطات على نزاعات تاريخية أو معاصرة."
+      ],
+      "summary": "يروي سهل بن سعد إعطاء النبي ﷺ الراية لعلي، ودعاءه له وتوجيهه عند خيبر.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3701",
+          "url": "https://sunnah.com/bukhari:3701"
+        }
+      ],
+      "order": 3,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "bb36238675a4a7fccc19464bfe9b83324e3c7aaa8d2cf05bd3fae112ab820bd0"
+    },
+    {
+      "id": "companions-khadijah",
+      "category": "companions",
+      "title": "خديجة رضي الله عنها",
+      "paragraphs": [
+        "في حديث بدء الوحي تظهر مساندة خديجة للنبي ﷺ وطمأنتها له، وذكرها لأخلاقه في صلة الرحم وإعانة المحتاجين.",
+        "موقفها جزء أساسي من الرواية الأولى في السيرة، ولا نضيف إليه خطبًا أو حوارات من عندنا."
+      ],
+      "summary": "في حديث بدء الوحي تظهر مساندة خديجة للنبي ﷺ وطمأنتها له، وذكرها لأخلاقه في صلة الرحم وإعانة المحتاجين.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3",
+          "url": "https://sunnah.com/bukhari:3"
+        }
+      ],
+      "order": 4,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "0c72f1de933d940eaa9ce74717f3dd043d6a94d4da3d73271cce1e4889e1c994"
+    },
+    {
+      "id": "companions-aishah",
+      "category": "companions",
+      "title": "عائشة رضي الله عنها",
+      "paragraphs": [
+        "ورد في الصحيح الثناء على فضل عائشة رضي الله عنها، وهي راوية حديث بدء الوحي الذي تبدأ به وحدات السيرة في التطبيق.",
+        "يمكن الانتقال إلى الروايتين لقراءة النصين في سياقهما. لا يُستدل بهذا التعريف على تقييم أشخاص معاصرين."
+      ],
+      "summary": "ورد في الصحيح الثناء على فضل عائشة رضي الله عنها، وهي راوية حديث بدء الوحي الذي تبدأ به وحدات السيرة في التطبيق.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3770",
+          "url": "https://sunnah.com/bukhari:3770"
+        },
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3",
+          "url": "https://sunnah.com/bukhari:3"
+        }
+      ],
+      "order": 5,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "2dc6dbdc38987a866f04df6981ed29a4e8e35d2775114ca93c95bb7c214c2fa1"
+    },
+    {
+      "id": "companions-bilal",
+      "category": "companions",
+      "title": "بلال رضي الله عنه",
+      "paragraphs": [
+        "سأل النبي ﷺ بلالًا عن عمل فعله، فذكر ملازمته الصلاة بعد الطهور بما كتب له. والرواية في صحيح البخاري.",
+        "تعرض المادة الحديث كما ورد، ولا تحوّل ممارسات الأشخاص أو سجلات التطبيق إلى أحكام على منزلتهم."
+      ],
+      "summary": "سأل النبي ﷺ بلالًا عن عمل فعله، فذكر ملازمته الصلاة بعد الطهور بما كتب له. والرواية في صحيح البخاري.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 1149",
+          "url": "https://sunnah.com/bukhari:1149"
+        }
+      ],
+      "order": 6,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "4a388c164eb94aba13d9eb969a7a45563bc8a5a5c45952d4771f27ca9fbe774a"
+    },
+    {
+      "id": "companions-ansar",
+      "category": "companions",
+      "title": "الأنصار والإيثار",
+      "paragraphs": [
+        "امتدح القرآن الأنصار ومحبتهم لمن هاجر إليهم وإيثارهم. ومن أمثلة المؤاخاة خبر سعد بن الربيع وعبد الرحمن بن عوف.",
+        "تجمع المادة بين المرجع القرآني والخبر الصحيح دون إضافة روايات غير موثقة عن أشخاص بأعيانهم."
+      ],
+      "summary": "امتدح القرآن الأنصار ومحبتهم لمن هاجر إليهم وإيثارهم. ومن أمثلة المؤاخاة خبر سعد بن الربيع وعبد الرحمن بن عوف.",
+      "sources": [
+        {
+          "kind": "quran-reference",
+          "title": "القرآن الكريم 59:9",
+          "surah": 59,
+          "from": 9,
+          "to": 9,
+          "url": "https://quran.com/59/9"
+        },
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 3780",
+          "url": "https://sunnah.com/bukhari:3780"
+        }
+      ],
+      "order": 7,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "2cbff9a136c3b55966a45afdaa03492d7f53d1a7c7f7355b371f2c7d2cfb3063"
+    },
+    {
+      "id": "ethics-truth",
+      "category": "ethics",
+      "title": "الصدق",
+      "paragraphs": [
+        "يربط حديث ابن مسعود الصدق بالبر، ويحذر من مسار الكذب إلى الفجور.",
+        "ملاحظة تعليمية: راجع صحة ما تنقله، ولا تنسب قولًا لشخص أو للنبي ﷺ دون تحقق."
+      ],
+      "summary": "يربط حديث ابن مسعود الصدق بالبر، ويحذر من مسار الكذب إلى الفجور.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 6094",
+          "url": "https://sunnah.com/bukhari:6094"
+        }
+      ],
+      "order": 0,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "e0ec59dea03dca1e528cbc0afddb30c55cad5fab79f4903b4179b44d945e4c5b"
+    },
+    {
+      "id": "ethics-kindness",
+      "category": "ethics",
+      "title": "الرفق",
+      "paragraphs": [
+        "تروي عائشة في صحيح مسلم أن الله يحب الرفق ويعطي عليه ما لا يعطي على العنف.",
+        "ملاحظة تعليمية: الرفق مدخل لحسن التعامل، وليس ذريعة لإلغاء حق أو إصدار فتوى دون علم."
+      ],
+      "summary": "تروي عائشة في صحيح مسلم أن الله يحب الرفق ويعطي عليه ما لا يعطي على العنف.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح مسلم 2593",
+          "url": "https://sunnah.com/muslim:2593"
+        }
+      ],
+      "order": 1,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "3f780203f7f18576403936263f1a633e5a5dab7ccbd119f6bb224c8755c60da6"
+    },
+    {
+      "id": "ethics-empathy",
+      "category": "ethics",
+      "title": "التراحم",
+      "paragraphs": [
+        "يشبّه الحديث المؤمنين في توادهم وتراحمهم وتعاطفهم بالجسد الذي يتألم بعضه لألم بعض.",
+        "ملاحظة تعليمية: السؤال عن المتألم وإعانته من صور التعامل الرحيم، دون أن نضيف أجرًا محددًا لم يذكره الدرس."
+      ],
+      "summary": "يشبّه الحديث المؤمنين في توادهم وتراحمهم وتعاطفهم بالجسد الذي يتألم بعضه لألم بعض.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 6011",
+          "url": "https://sunnah.com/bukhari:6011"
+        }
+      ],
+      "order": 2,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "6d259083561e321fd2f9fcf28f3e8b579dd34d8373093950083ac8711869277e"
+    },
+    {
+      "id": "ethics-speech",
+      "category": "ethics",
+      "title": "حفظ اللسان وحق الجار والضيف",
+      "paragraphs": [
+        "يجمع حديث أبي هريرة بين عدم إيذاء الجار وإكرام الضيف وقول الخير أو الصمت.",
+        "ملاحظة تعليمية: يُقرأ الحديث بوصفه تذكيرًا عامًا، لا حكمًا على نية شخص أو إيمانه من موقف واحد."
+      ],
+      "summary": "يجمع حديث أبي هريرة بين عدم إيذاء الجار وإكرام الضيف وقول الخير أو الصمت.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 6018",
+          "url": "https://sunnah.com/bukhari:6018"
+        }
+      ],
+      "order": 3,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "f5685647c3cc1f53d5be4a04343d15c4a57cdadf3a29db365aa23ece14397cd9"
+    },
+    {
+      "id": "ethics-intention",
+      "category": "ethics",
+      "title": "النيّة والعمل",
+      "paragraphs": [
+        "يفتتح صحيح البخاري بحديث الأعمال بالنيات، وفيه بيان أثر المقصد في العمل.",
+        "ملاحظة تعليمية: سجلات التطبيق تذكير شخصي ولا تكشف النيّة أو تقيس إخلاص الإنسان."
+      ],
+      "summary": "يفتتح صحيح البخاري بحديث الأعمال بالنيات، وفيه بيان أثر المقصد في العمل.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 1",
+          "url": "https://sunnah.com/bukhari:1"
+        }
+      ],
+      "order": 4,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "93dedd55067c8010b8d3f348c583c13e64b64f0797c56fd303c20a043a914850"
+    },
+    {
+      "id": "ethics-continuity",
+      "category": "ethics",
+      "title": "المداومة والاعتدال",
+      "paragraphs": [
+        "يحث حديث عائشة على التسديد والمقاربة والمداومة على العمل ولو قل.",
+        "ملاحظة تعليمية: يمكن اختيار وقت ثابت للتعلم أو القراءة، دون فرض عدد تعبدي لم يرد في المصدر."
+      ],
+      "summary": "يحث حديث عائشة على التسديد والمقاربة والمداومة على العمل ولو قل.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 6464",
+          "url": "https://sunnah.com/bukhari:6464"
+        }
+      ],
+      "order": 5,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "e2252d1524564c89982870d4cf3539fb1a1b26dba72fab6b1f1531ca8c2ec00e"
+    },
+    {
+      "id": "ethics-helping",
+      "category": "ethics",
+      "title": "إعانة الآخرين وطلب العلم",
+      "paragraphs": [
+        "يجمع حديث أبي هريرة في صحيح مسلم بين تفريج الكرب وإعانة الآخرين والسعي في طلب العلم.",
+        "ملاحظة تعليمية: مواد هذا التطبيق مدخل للتعلم، ولا تغني عن الرجوع إلى المصادر وأهل الاختصاص."
+      ],
+      "summary": "يجمع حديث أبي هريرة في صحيح مسلم بين تفريج الكرب وإعانة الآخرين والسعي في طلب العلم.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح مسلم 2699a",
+          "url": "https://sunnah.com/muslim:2699a"
+        }
+      ],
+      "order": 6,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "7cf5ca6fa8fac38880ef0e71c28ddfc8fe5702ad0dd9ebdf48158858363da30d"
+    },
+    {
+      "id": "ethics-ease",
+      "category": "ethics",
+      "title": "التيسير والتبشير",
+      "paragraphs": [
+        "يروي أنس عن النبي ﷺ الأمر بالتيسير وعدم التعسير، والتبشير وعدم التنفير.",
+        "ملاحظة تعليمية: يظل الحكم في المسائل الفقهية محتاجًا إلى دليله وتفصيله، فلا يُنتزع من عنوان عام."
+      ],
+      "summary": "يروي أنس عن النبي ﷺ الأمر بالتيسير وعدم التعسير، والتبشير وعدم التنفير.",
+      "sources": [
+        {
+          "kind": "hadith",
+          "title": "صحيح البخاري 69",
+          "url": "https://sunnah.com/bukhari:69"
+        }
+      ],
+      "order": 7,
+      "version": 1,
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "original-educational-summary",
+        "note": "صياغة تعليمية أصلية مستندة إلى المراجع؛ ليست نصًا قرآنيًا أو حديثًا حرفيًا أو شرحًا منقولًا."
+      },
+      "sha256": "d95c04c9aea306160731094dd6e8baa7e40bdc04000251a96dc1ba1a37390cf6"
+    }
+  ],
+  "quizzes": {
+    "seerah": [
+      {
+        "question": "من نقل حديث بدء الوحي المشار إليه في الوحدة؟",
+        "choices": [
+          "عائشة رضي الله عنها",
+          "جابر رضي الله عنه",
+          "سهل بن سعد رضي الله عنه"
+        ],
+        "answer": 0,
+        "explanation": "المصدر: صحيح البخاري 3.",
+        "article": "seerah-beginning"
+      },
+      {
+        "question": "ما الذي يثبته حديث البخاري 4281 في فتح مكة؟",
+        "choices": [
+          "قراءة النبي ﷺ سورة الفتح على ناقته",
+          "تحديد يوم مولده",
+          "تفاصيل صلح الحديبية"
+        ],
+        "answer": 0,
+        "explanation": "هذا هو المشهد الذي يرويه عبد الله بن مغفل.",
+        "article": "seerah-conquest"
+      }
+    ],
+    "prophets": [
+      {
+        "question": "أي نبي تذكر الوحدة دعوته إلى إيفاء المكيال والميزان؟",
+        "choices": [
+          "شعيب عليه السلام",
+          "إدريس عليه السلام",
+          "زكريا عليه السلام"
+        ],
+        "answer": 0,
+        "explanation": "المرجع: هود 84–95.",
+        "article": "prophets-shuayb"
+      },
+      {
+        "question": "كيف يتعامل التطبيق مع قصة لم تفصلها الآيات عن اليسع؟",
+        "choices": [
+          "يقف عند ما ورد دون اختلاق تفاصيل",
+          "ينشئ حوارًا لتكملة القصة",
+          "ينقل أي قصة مشهورة دون مصدر"
+        ],
+        "answer": 0,
+        "explanation": "التوثيق مقدّم على استكمال قصة من غير دليل.",
+        "article": "prophets-alyasa"
+      }
+    ],
+    "companions": [
+      {
+        "question": "من صاحب النبي ﷺ في الغار في الحديث المشار إليه؟",
+        "choices": [
+          "أبو بكر رضي الله عنه",
+          "بلال رضي الله عنه",
+          "سعد بن الربيع رضي الله عنه"
+        ],
+        "answer": 0,
+        "explanation": "المصدر: صحيح البخاري 3653.",
+        "article": "companions-abu-bakr"
+      },
+      {
+        "question": "ما الموقف الذي تعرضه وحدة خديجة؟",
+        "choices": [
+          "مساندتها للنبي ﷺ عند بدء الوحي",
+          "وصفها حجة النبي ﷺ",
+          "إعطاؤها الراية يوم خيبر"
+        ],
+        "answer": 0,
+        "explanation": "المصدر: صحيح البخاري 3.",
+        "article": "companions-khadijah"
+      }
+    ],
+    "ethics": [
+      {
+        "question": "إلى ماذا يقود الصدق بحسب الحديث في الوحدة؟",
+        "choices": [
+          "البر",
+          "معرفة نيات الآخرين",
+          "إلغاء الحاجة إلى التحقق"
+        ],
+        "answer": 0,
+        "explanation": "المصدر: صحيح البخاري 6094.",
+        "article": "ethics-truth"
+      },
+      {
+        "question": "هل تُستخدم نتيجة الاختبار لتقييم تدينك؟",
+        "choices": [
+          "لا، تقيس فهم المادة فقط",
+          "نعم، تقيس الإخلاص",
+          "نعم، تحكم على العبادة"
+        ],
+        "answer": 0,
+        "explanation": "هذه أداة تعلم اختيارية، والسجلات لا تقيس النيّات.",
+        "article": "ethics-intention"
+      }
+    ]
+  }
+}

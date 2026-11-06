@@ -1,0 +1,166 @@
+{
+  "source": "ARQURAN.TXT",
+  "sha256": "7ef9809b2d684c17efc84a2e50443af0af963f03eff0cb805fa094e1912ec2ba",
+  "pages": 604,
+  "surahs": 114,
+  "textLines": 8930,
+  "losslessPageText": true,
+  "anomalies": [
+    {
+      "kind": "verse-marker",
+      "surah": 2,
+      "page": 27,
+      "previous": 179,
+      "sourceMarker": "{181}",
+      "line": 422
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 2,
+      "page": 27,
+      "previous": 181,
+      "sourceMarker": "{181}",
+      "line": 423
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 2,
+      "page": 42,
+      "previous": 255,
+      "sourceMarker": "{265}",
+      "line": 665
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 2,
+      "page": 43,
+      "previous": 265,
+      "sourceMarker": "{257}",
+      "line": 670
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 6,
+      "page": 144,
+      "previous": 130,
+      "sourceMarker": "{31}",
+      "line": 2311
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 6,
+      "page": 145,
+      "previous": 31,
+      "sourceMarker": "{132}",
+      "line": 2314
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 15,
+      "page": 265,
+      "previous": 60,
+      "sourceMarker": "{60}",
+      "line": 4256
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 15,
+      "page": 265,
+      "previous": 60,
+      "sourceMarker": "{62}",
+      "line": 4257
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 20,
+      "page": 313,
+      "previous": 14,
+      "sourceMarker": "(15)",
+      "line": 5025
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 20,
+      "page": 313,
+      "previous": 15,
+      "sourceMarker": "(16)",
+      "line": 5026
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 22,
+      "page": 335,
+      "previous": 27,
+      "sourceMarker": "{27}",
+      "line": 5386
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 22,
+      "page": 335,
+      "previous": 27,
+      "sourceMarker": "{29}",
+      "line": 5387
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 25,
+      "page": 365,
+      "previous": 56,
+      "sourceMarker": "{55}",
+      "line": 5861
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 25,
+      "page": 365,
+      "previous": 55,
+      "sourceMarker": "{58}",
+      "line": 5863
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 37,
+      "page": 452,
+      "previous": 181,
+      "sourceMarker": "{181}",
+      "line": 7277
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 38,
+      "page": 455,
+      "previous": 39,
+      "sourceMarker": "{41}",
+      "line": 7326
+    },
+    {
+      "kind": "surah-number",
+      "surah": 72,
+      "sourceNumber": 71,
+      "line": 9208
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 109,
+      "page": 603,
+      "previous": 4,
+      "sourceMarker": "(5}",
+      "line": 9732
+    },
+    {
+      "kind": "verse-marker",
+      "surah": 109,
+      "page": 603,
+      "previous": 5,
+      "sourceMarker": "(6}",
+      "line": 9732
+    }
+  ],
+  "validation": "Page order and all non-organizational source lines verified. This does not certify verse numbering, orthography, printed Madinah line layout, riwaya or licensing.",
+  "transformations": [
+    "Remove organizational *BOOK*, *1*, *2*, *3* lines from body",
+    "Remove leading @ separator and following whitespace only",
+    "Keep every non-empty body line, including malformed source markers, unchanged and in order"
+  ]
+}

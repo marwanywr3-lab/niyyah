@@ -1,0 +1,5 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import {discoverArticles,discoverCategories,learningQuizzes} from '../data/discover-source.mjs';
+const articles=discoverArticles.map(a=>({...a,sha256:crypto.createHash('sha256').update(JSON.stringify(a.paragraphs)).digest('hex')}));
+fs.writeFileSync('data/discover.json',JSON.stringify({version:'1.0.0',categories:discoverCategories,articles,quizzes:learningQuizzes},null,2));
+const sql=s=>"'"+String(s).replaceAll("'","''")+"'";fs.mkdirSync('seeds',{recursive:true});fs.writeFileSync('seeds/discover-v1.sql',articles.map(a=>`INSERT INTO content(id,kind,language,title,body,source,license,reviewer,status,version) VALUES(${['article:'+a.id,'educational-summary','ar',a.title,JSON.stringify(a),JSON.stringify(a.sources),a.rights.basis,'source comparison; independent review pending','source_checked',1].map(sql).join(',')}) ON CONFLICT(id) DO UPDATE SET body=excluded.body,source=excluded.source,status=excluded.status,version=excluded.version;`).join('\n'));
+console.log('Built '+articles.length+' sourced learning summaries');

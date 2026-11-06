@@ -1,4 +1,5 @@
 import {religiousTopics,religiousAnswer} from './religious-library.js';
+import {discoveryCandidates,discoveryAnswer} from './discovery-retrieval.js';
 export const HELP={
  greeting:'أهلًا، أنا سَنا. أستطيع مساعدتك في استخدام نِيّة: القراءة، مواقيت الصلاة، الدعوات، حفظ البيانات والحساب. بماذا أساعدك؟',
  quran:'افتح قسم القرآن، ثم اختر السورة أو ابحث باسمها. يمكنك حفظ إشارة أو تأمل شخصي، وتنزيل حزمة القراءة دون اتصال. النص من ملف صاحب المشروع وما زال قيد مراجعة التقسيم؛ لا يُعد العرض الحالي مصحفًا مدققًا.',
@@ -25,10 +26,12 @@ export async function sana(request,body,user,env,providerFetch=fetch){
  if(!env.GEMINI_API_KEY||env.SANA_DISABLED==='true')return json({error:'سَنا غير متاحة حاليًا'},503);
  if(typeof body.message!=='string'||!body.message.trim()||body.message.length>1200||body.consent!==true||!/^[-a-f0-9]{36}$/.test(body.requestId||''))return json({error:'أدخل سؤالًا لا يتجاوز 1200 حرف، ووافق على إرساله إلى Gemini'},400);
  const account=await env.DB.prepare('SELECT created_at FROM users WHERE id=?').bind(user.id).first();
+ const candidates=discoveryCandidates(body.message),allowedTopics=[...TOPICS,...candidates.map(c=>c.key)];
+ const system=SYSTEM+' Additional source-checked learning summaries (seerah, prophets, companions, ethics) available for retrieval: '+JSON.stringify(candidates)+'. Select an article_ key for a matching general learning question, never for fatwa or scripture quotation. If the candidate does not address the question, choose religious. Do not invent a key.';
  const period=cycleStart(account.created_at),now=Date.now();
  await env.DB.prepare("UPDATE ai_requests SET state='uncertain' WHERE user_id=? AND state='reserved' AND created_at<?").bind(user.id,now-60000).run();
  // UTF-8 bytes conservatively exceed tokenizer input length; include envelope overhead and max output.
- const reserved=new TextEncoder().encode(SYSTEM+body.message).length+1024;
+ const reserved=new TextEncoder().encode(system+body.message).length+1024;
  const limit=10000,globalBudget=1000000,unitsPerToken=5; // USD micros, deliberately above fixed model list rates; $1 lifetime ceiling.
  const row=await env.DB.prepare(`INSERT INTO ai_requests(id,user_id,period,tokens,cost_micros,state,created_at)
  SELECT ?,?,?,?,?, 'reserved',? WHERE
@@ -41,7 +44,7 @@ export async function sana(request,body,user,env,providerFetch=fetch){
  try{
   const response=await providerFetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent',{
    method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':env.GEMINI_API_KEY},signal:AbortSignal.timeout(20000),
-   body:JSON.stringify({systemInstruction:{parts:[{text:SYSTEM}]},contents:[{role:'user',parts:[{text:body.message}]}],generationConfig:{temperature:0,maxOutputTokens:128,responseMimeType:'application/json',responseSchema:{type:'OBJECT',properties:{topic:{type:'STRING',enum:TOPICS}},required:['topic']}}})});
+   body:JSON.stringify({systemInstruction:{parts:[{text:system}]},contents:[{role:'user',parts:[{text:body.message}]}],generationConfig:{temperature:0,maxOutputTokens:128,responseMimeType:'application/json',responseSchema:{type:'OBJECT',properties:{topic:{type:'STRING',enum:allowedTopics}},required:['topic']}}})});
   if(!response.ok){
    let problem;try{problem=await response.json();}catch{}
    const reasons=new Set(['API_KEY_INVALID','API_KEY_EXPIRED','API_KEY_SERVICE_BLOCKED','API_KEY_HTTP_REFERRER_BLOCKED','API_KEY_IP_ADDRESS_BLOCKED','SERVICE_DISABLED','BILLING_DISABLED','CONSUMER_INVALID']);
@@ -51,8 +54,8 @@ export async function sana(request,body,user,env,providerFetch=fetch){
   const data=await response.json();const usage=data.usageMetadata?.totalTokenCount;
   if(Number.isSafeInteger(usage)&&usage>=0&&usage<=reserved){charged=usage;state='settled';}
   const text=data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text||'').join('');let topic;try{topic=JSON.parse(text).topic;}catch{}
-  if(!TOPICS.includes(topic))return json({error:'تعذّر التحقق من نتيجة سَنا؛ حاول بسؤال أوضح'},502);
-  const sourced=religiousAnswer(topic);
+  if(!allowedTopics.includes(topic))return json({error:'تعذّر التحقق من نتيجة سَنا؛ حاول بسؤال أوضح'},502);
+  const sourced=discoveryAnswer(topic)||religiousAnswer(topic);
   return json({...(sourced||{reply:HELP[topic],source:'دليل استخدام نِيّة',scope:'app-support'}),topic,model:'gemini-3.5-flash-lite',usage:{chargedTokens:charged,monthlyLimit:limit}});
  }catch{return json({error:'انقطع الاتصال بسَنا؛ حاول لاحقًا'},502);}
  finally{await env.DB.prepare('UPDATE ai_requests SET tokens=?,cost_micros=?,state=? WHERE id=?').bind(charged,charged*unitsPerToken,state,body.requestId).run();}
