@@ -8,7 +8,7 @@ const fmt=d=>new Intl.DateTimeFormat('ar',{hour:'numeric',minute:'2-digit'}).for
 let user=null,revision=0;const API=location.hostname.endsWith('github.io')?'https://niyyah-api.barboodmarwan.workers.dev':'';
 async function api(path,data){const r=await fetch(API+'/api/'+path,{method:data?'POST':'GET',headers:{'Content-Type':'application/json',...(sessionStorage.token?{Authorization:'Bearer '+sessionStorage.token}:{})},...(data?{body:JSON.stringify(data)}:{})});const b=await r.json();if(!r.ok)throw Error(b.error||'تعذر إتمام الطلب');return b;}
 function toast(t){$('#toast').textContent=t;$('#toast').hidden=false;setTimeout(()=>$('#toast').hidden=true,4500);}
-function params(){const p=CalculationMethod[state.method]();p.madhab=+state.madhab;return p;}
+function params(){const p=CalculationMethod[state.method]();p.madhab=+state.madhab===1?Madhab.Hanafi:Madhab.Shafi;return p;}
 function prayers(){return new PrayerTimes(new Coordinates(+state.lat,+state.lng),new Date(),params());}
 const labels={fajr:'الفجر',sunrise:'الشروق',dhuhr:'الظهر',asr:'العصر',maghrib:'المغرب',isha:'العشاء'};
 function hijri(){const d=new Date();d.setDate(d.getDate()+(+state.offset||0));return new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(d);}
