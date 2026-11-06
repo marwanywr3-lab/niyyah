@@ -1,13 +1,14 @@
 {
-  "name": "sites-worker-esm-starter",
+  "name": "niyyah",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bash scripts/build.sh",
-    "validate": "node scripts/validate-artifact.mjs"
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate-artifact.mjs",
+    "test": "node scripts/check.mjs"
   },
   "version": "1.0.0",
-  "description": "Use this starter for a static microsite, click counter, or simple internal UI whose state is browser-scoped. It has no dependencies and needs no install.",
+  "description": "NIYYAH development PWA and Cloudflare API",
   "main": "index.js",
   "keywords": [],
   "author": "",

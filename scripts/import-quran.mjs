@@ -11,10 +11,11 @@ for(const line of text.split(/\r?\n/)){
  if(line.startsWith('*1*')){juz++;continue;}
  if(line.startsWith('*3*')){const m=line.match(/ص\s*(\d+)/);if(m)page=+m[1];continue;}
  if(line.startsWith('*'))continue;
- if(current){buffer+=(buffer?'\n':'')+line.replace(/^@\s*/,'');consume();}
+ if(current){const cleaned=line.replace(/^@\s*/,'');current.raw=(current.raw||'')+cleaned+'\n';buffer+=(buffer?'\n':'')+cleaned;consume();}
 }
 if(buffer.trim())issues.push({trailing:buffer.trim()});
 for(const s of surahs)for(let i=0;i<s.verses.length;i++)if(s.verses[i].number!==i+1)issues.push({surah:s.number,index:i,number:s.verses[i].number});
+for(const s of surahs){s.reviewRequired=issues.some(i=>i.surah===s.number);}
 const count=surahs.reduce((n,s)=>n+s.verses.length,0);
 const report={source:'ARQURAN.TXT',edition:'2.08 (file header)',sha256:crypto.createHash('sha256').update(bytes).digest('hex'),surahs:surahs.length,verses:count,issues,review:'Structural validation only; licensing and independent textual review pending',whitespace:'Line breaks preserved within each verse; only surrounding whitespace and organizational markers removed; initial basmala remains with first numbered verse where present in source'};
 fs.mkdirSync('data',{recursive:true});fs.writeFileSync('data/quran.json',JSON.stringify(surahs));fs.writeFileSync('data/import-report.json',JSON.stringify(report,null,2));
