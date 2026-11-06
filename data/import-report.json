@@ -14,6 +14,11 @@
       "trailing": "{ س } ."
     },
     {
+      "surah": 72,
+      "sourceSurahNumber": 71,
+      "reason": "Source heading number differs from sequential position; internal ID uses sequential position without changing heading text"
+    },
+    {
       "surah": 96,
       "trailing": "{ س } ."
     },

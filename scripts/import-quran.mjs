@@ -4,10 +4,11 @@ const source=process.argv[2];
 if(!source) throw Error('Supply the approved ARQURAN.TXT path');
 const bytes=fs.readFileSync(source), text=bytes.toString('utf8');
 const surahs=[]; let current=null, buffer='',page=0,juz=0,issues=[];
-function consume(){if(!current)return; let m; while((m=/([\s\S]*?)\{(\d+)\}/.exec(buffer))){const n=Number(m[2]);current.verses.push({number:n,text:m[1].trim(),page,juz});buffer=buffer.slice(m[0].length);}}
+function verseText(text,n){let t=text.trim();if(n===1&&current.number>1){const lines=t.split('\n');const first=lines[0].replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/\s+/g,' ').trim();if(first==='بسم الله الرحمن الرحيم'&&lines.length>1){current.basmala=lines.shift();t=lines.join('\n').trim();}}return t;}
+function consume(){if(!current)return; let m; while((m=/([\s\S]*?)\{(\d+)\}/.exec(buffer))){const n=Number(m[2]);current.verses.push({number:n,text:verseText(m[1],n),page,juz});buffer=buffer.slice(m[0].length);}}
 for(const line of text.split(/\r?\n/)){
  if(line.startsWith('*2*')&&!/^\*2\*[.\s]*\d/.test(line))continue;
- if(line.startsWith('*2*')){if(buffer.trim())issues.push({surah:current?.number,trailing:buffer.trim()});buffer='';const m=line.match(/\*2\*[.\s]*(\d+)[.\s]+(?:سورة\s*)?(.*)/);if(!m)throw Error(line);current={number:+m[1],name:m[2].trim(),verses:[]};surahs.push(current);continue;}
+ if(line.startsWith('*2*')){if(buffer.trim())issues.push({surah:current?.number,trailing:buffer.trim()});buffer='';const m=line.match(/\*2\*[.\s]*(\d+)[.\s]+(?:سورة\s*)?(.*)/);if(!m)throw Error(line);const ordinal=surahs.length+1;if(+m[1]!==ordinal)issues.push({surah:ordinal,sourceSurahNumber:+m[1],reason:'Source heading number differs from sequential position; internal ID uses sequential position without changing heading text'});current={number:ordinal,sourceNumber:+m[1],name:m[2].trim(),verses:[]};surahs.push(current);continue;}
  if(line.startsWith('*1*')){juz++;continue;}
  if(line.startsWith('*3*')){const m=line.match(/ص\s*(\d+)/);if(m)page=+m[1];continue;}
  if(line.startsWith('*'))continue;
