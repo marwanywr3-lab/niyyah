@@ -37,7 +37,7 @@ export async function sana(request,body,user,env,providerFetch=fetch){
  if(!row)return json({error:'انتظر قليلًا أو راجع رصيدك؛ قد يكون الطلب مكررًا أو حد الاستخدام قد بلغ نهايته'},429);
  let charged=reserved,state='uncertain';
  try{
-  const response=await providerFetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent',{
+  const response=await providerFetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent',{
    method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':env.GEMINI_API_KEY},signal:AbortSignal.timeout(20000),
    body:JSON.stringify({systemInstruction:{parts:[{text:SYSTEM}]},contents:[{role:'user',parts:[{text:body.message}]}],generationConfig:{temperature:0,maxOutputTokens:128,responseMimeType:'application/json',responseSchema:{type:'OBJECT',properties:{topic:{type:'STRING',enum:Object.keys(HELP)}},required:['topic']}}})});
   if(!response.ok){
@@ -50,7 +50,7 @@ export async function sana(request,body,user,env,providerFetch=fetch){
   if(Number.isSafeInteger(usage)&&usage>=0&&usage<=reserved){charged=usage;state='settled';}
   const text=data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text||'').join('');let topic;try{topic=JSON.parse(text).topic;}catch{}
   if(!Object.hasOwn(HELP,topic))return json({error:'تعذّر التحقق من نتيجة سَنا؛ حاول بسؤال عن التطبيق'},502);
-  return json({reply:HELP[topic],topic,source:'دليل استخدام نِيّة — الإصدار 0.1',usage:{chargedTokens:charged,monthlyLimit:limit},scope:'app-support'});
+  return json({reply:HELP[topic],topic,model:'gemini-3.5-flash-lite',source:'دليل استخدام نِيّة — الإصدار 0.1',usage:{chargedTokens:charged,monthlyLimit:limit},scope:'app-support'});
  }catch{return json({error:'انقطع الاتصال بسَنا؛ حاول لاحقًا'},502);}
  finally{await env.DB.prepare('UPDATE ai_requests SET tokens=?,cost_micros=?,state=? WHERE id=?').bind(charged,charged*unitsPerToken,state,body.requestId).run();}
 }
