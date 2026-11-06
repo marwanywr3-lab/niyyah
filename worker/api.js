@@ -1,3 +1,4 @@
+import {sana} from './sana.js';
 const json=(x,status=200,headers={})=>new Response(JSON.stringify(x),{status,headers:{'content-type':'application/json;charset=utf-8','cache-control':'no-store',...headers}});
 const hex=b=>Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,'0')).join('');
 const random=()=>hex(crypto.getRandomValues(new Uint8Array(32)));
@@ -14,7 +15,7 @@ export async function handle(request,env){
 }
 async function api(request,env,url){
  const path=url.pathname.slice(5);
- if(path==='health')return json({ok:true,database:!!env.DB,aiEnabled:false,version:'0.1.0'});
+ if(path==='health')return json({ok:true,database:!!env.DB,aiEnabled:!!env.GEMINI_API_KEY&&env.SANA_DISABLED!=='true',aiScope:'app-support',version:'0.2.0'});
  if(!env.DB)return json({error:'قاعدة البيانات لم تُربط بعد'},503);
  const db=env.DB;
  let body={};if(request.method==='POST'){if(!request.headers.get('content-type')?.includes('application/json'))return json({error:'JSON required'},415);const text=await request.text();if(text.length>500000)return json({error:'الطلب كبير جدًا'},413);try{body=JSON.parse(text);}catch{return json({error:'JSON غير صالح'},400);}}
@@ -32,6 +33,11 @@ async function api(request,env,url){
  const token=request.headers.get('authorization')?.replace(/^Bearer /,'');if(!token)return json({error:'سجل الدخول أولًا'},401);
  const user=await db.prepare('SELECT u.id,u.username FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(await digest(token),Date.now()).first();if(!user)return json({error:'انتهت الجلسة'},401);
  if(path==='me'&&request.method==='GET')return json({user});
+ if(path==='sana/status'&&request.method==='GET'){
+  if(!env.GEMINI_API_KEY)return json({configured:false},503);
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models',{headers:{'x-goog-api-key':env.GEMINI_API_KEY}});if(!r.ok)return json({configured:true,providerStatus:r.status},502);
+  const data=await r.json();return json({configured:true,models:data.models?.filter(m=>m.supportedGenerationMethods?.includes('generateContent')).map(m=>m.name).filter(n=>n.includes('flash'))||[]});
+ }
  if(path==='logout'&&request.method==='POST'){await db.prepare('DELETE FROM sessions WHERE token_hash=?').bind(await digest(token)).run();return json({ok:true});}
  if(path==='vault'&&request.method==='GET'){const record=await db.prepare('SELECT version,salt,iv,ciphertext FROM vaults WHERE user_id=?').bind(user.id).first();return json({record});}
  if(path==='vault'&&request.method==='POST'){
@@ -42,6 +48,6 @@ async function api(request,env,url){
   return row?json(row):json({error:'تعارض إصدارات؛ لم يتم استبدال نسخة الخادم'},409);
  }
  if(path==='account/delete'&&request.method==='POST'){const u=await db.prepare('SELECT password_hash,salt FROM users WHERE id=?').bind(user.id).first();if(!equal(u.password_hash,await hash(String(body.password||''),u.salt)))return json({error:'كلمة المرور غير صحيحة'},401);await db.batch([db.prepare('DELETE FROM vaults WHERE user_id=?').bind(user.id),db.prepare('DELETE FROM sessions WHERE user_id=?').bind(user.id),db.prepare('DELETE FROM users WHERE id=?').bind(user.id)]);return json({ok:true});}
- if(path==='sana')return json({error:'سَنا الذكية متوقفة حتى اعتماد المصادر وضوابط الميزانية'},503);
+ if(path==='sana')return sana(request,body,user,env);
  return json({error:'Not found'},404);
 }
