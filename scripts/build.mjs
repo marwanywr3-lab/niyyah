@@ -8,8 +8,9 @@ await build({entryPoints:['client.js'],outfile:'public/app.js',bundle:true,minif
 for(const f of ['index.html','style.css','sw.js','icon.svg','manifest.webmanifest'])fs.copyFileSync(f,'public/'+f);
 const hash=crypto.createHash('sha256').update(fs.readFileSync('public/app.js')).digest('hex').slice(0,12);
 const appName='app.'+hash+'.js';fs.copyFileSync('public/app.js','public/'+appName);
-fs.writeFileSync('public/index.html',fs.readFileSync('index.html','utf8').replace('./app.js','./'+appName));
-fs.writeFileSync('public/sw.js',fs.readFileSync('sw.js','utf8').replace('./app.js','./'+appName).replace('niyyah-shell-v1','niyyah-shell-'+hash));
+const styleHash=crypto.createHash('sha256').update(fs.readFileSync('style.css')).digest('hex').slice(0,12),styleName='style.'+styleHash+'.css';fs.copyFileSync('style.css','public/'+styleName);
+fs.writeFileSync('public/index.html',fs.readFileSync('index.html','utf8').replace('./app.js','./'+appName).replace('./style.css','./'+styleName));
+fs.writeFileSync('public/sw.js',fs.readFileSync('sw.js','utf8').replace('./app.js','./'+appName).replace('./style.css','./'+styleName).replace('niyyah-shell-v1','niyyah-shell-'+hash+'-'+styleHash));
 for(const f of ['quran.json','import-report.json','quran-pages.json','page-import-report.json','adhkar.json','knowledge.json','discover.json'])fs.copyFileSync('data/'+f,'public/'+f);
 fs.cpSync('assets/fonts','public/fonts',{recursive:true});
 await build({entryPoints:['worker/main.js'],outfile:'worker/index.js',bundle:true,format:'esm',platform:'neutral',minify:true});
