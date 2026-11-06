@@ -9,7 +9,7 @@ const hash=crypto.createHash('sha256').update(fs.readFileSync('public/app.js')).
 const appName='app.'+hash+'.js';fs.copyFileSync('public/app.js','public/'+appName);
 fs.writeFileSync('public/index.html',fs.readFileSync('index.html','utf8').replace('./app.js','./'+appName));
 fs.writeFileSync('public/sw.js',fs.readFileSync('sw.js','utf8').replace('./app.js','./'+appName).replace('niyyah-shell-v1','niyyah-shell-'+hash));
-for(const f of ['quran.json','import-report.json','adhkar.json'])fs.copyFileSync('data/'+f,'public/'+f);
+for(const f of ['quran.json','import-report.json','adhkar.json','knowledge.json'])fs.copyFileSync('data/'+f,'public/'+f);
 const assets={};for(const f of fs.readdirSync('public'))assets['/'+f]=fs.readFileSync('public/'+f,'utf8');assets['/']=assets['/index.html'];
 fs.writeFileSync('worker/assets.js','export default '+JSON.stringify(assets));
 await build({entryPoints:['worker/main.js'],outfile:'worker/index.js',bundle:true,format:'esm',platform:'neutral',minify:true});

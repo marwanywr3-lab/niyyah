@@ -1,0 +1,85 @@
+{
+  "version": "1.0.0",
+  "entries": [
+    {
+      "id": "intention",
+      "title": "النيّة",
+      "text": "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+      "note": "مقتطف من أول الحديث. تذكير عام بالنيّة، وليس حكمًا على نيات الأشخاص.",
+      "source": {
+        "collection": "صحيح البخاري",
+        "number": "1",
+        "url": "https://sunnah.com/bukhari:1"
+      },
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "classical-arabic-matn-only"
+      },
+      "version": 1
+    },
+    {
+      "id": "steady",
+      "title": "المداومة على العمل الصالح والتقرب إلى الله",
+      "text": "سَدِّدُوا وَقَارِبُوا، وَاعْلَمُوا أَنْ لَنْ يُدْخِلَ أَحَدَكُمْ عَمَلُهُ الْجَنَّةَ، وَأَنَّ أَحَبَّ الأَعْمَالِ أَدْوَمُهَا إِلَى اللَّهِ، وَإِنْ قَلَّ",
+      "note": "من التذكير العام بالمداومة. لا يُستنتج من سجلات التطبيق حكم على التزامك، ولا تُفرض خطة أو أعداد لم ترد في النص.",
+      "source": {
+        "collection": "صحيح البخاري",
+        "number": "6464",
+        "url": "https://sunnah.com/bukhari:6464"
+      },
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "classical-arabic-matn-only"
+      },
+      "version": 1
+    },
+    {
+      "id": "gentle",
+      "title": "التيسير والتبشير",
+      "text": "يَسِّرُوا وَلاَ تُعَسِّرُوا، وَبَشِّرُوا وَلاَ تُنَفِّرُوا",
+      "note": "نص الحديث في التيسير والتبشير؛ لا يُستخدم وحده لإصدار حكم فقهي في مسألة معينة.",
+      "source": {
+        "collection": "صحيح البخاري",
+        "number": "69",
+        "url": "https://sunnah.com/bukhari:69"
+      },
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "classical-arabic-matn-only"
+      },
+      "version": 1
+    },
+    {
+      "id": "learning",
+      "title": "طلب العلم وإعانة الآخرين",
+      "text": "وَاللَّهُ فِي عَوْنِ الْعَبْدِ مَا كَانَ الْعَبْدُ فِي عَوْنِ أَخِيهِ وَمَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+      "note": "مقتطف متصل من حديث أطول في تفريج الكرب وإعانة الآخرين وطلب العلم. الرابط يتيح قراءة السياق الكامل.",
+      "source": {
+        "collection": "صحيح مسلم",
+        "number": "2699a",
+        "url": "https://sunnah.com/muslim:2699a"
+      },
+      "status": "source_checked",
+      "checkedAt": "2026-11-06",
+      "review": {
+        "independentScholarReview": false
+      },
+      "rights": {
+        "basis": "classical-arabic-matn-only"
+      },
+      "version": 1
+    }
+  ]
+}

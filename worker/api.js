@@ -1,5 +1,6 @@
 import {sana} from './sana.js';
 import {publishedEntries} from './religious-library.js';
+import {knowledge} from '../data/knowledge-source.mjs';
 const json=(x,status=200,headers={})=>new Response(JSON.stringify(x),{status,headers:{'content-type':'application/json;charset=utf-8','cache-control':'no-store',...headers}});
 const hex=b=>Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,'0')).join('');
 const random=()=>hex(crypto.getRandomValues(new Uint8Array(32)));
@@ -17,7 +18,7 @@ export async function handle(request,env){
 async function api(request,env,url){
  const path=url.pathname.slice(5);
  if(path==='health')return json({ok:true,database:!!env.DB,aiEnabled:!!env.GEMINI_API_KEY&&env.SANA_DISABLED!=='true',aiScope:'app-support-and-sourced-adhkar',model:'gemini-3.5-flash-lite',libraryEntries:publishedEntries.length,version:'0.3.0'});
- if(path==='library'&&request.method==='GET')return json({version:'1.0.0',review:'source_checked; independent scholar review pending',entries:publishedEntries});
+ if(path==='library'&&request.method==='GET')return json({version:'1.0.0',review:'source_checked; independent scholar review pending',entries:publishedEntries,knowledge});
  if(!env.DB)return json({error:'قاعدة البيانات لم تُربط بعد'},503);
  const db=env.DB;
  let body={};if(request.method==='POST'){if(!request.headers.get('content-type')?.includes('application/json'))return json({error:'JSON required'},415);const text=await request.text();if(text.length>500000)return json({error:'الطلب كبير جدًا'},413);try{body=JSON.parse(text);}catch{return json({error:'JSON غير صالح'},400);}}
