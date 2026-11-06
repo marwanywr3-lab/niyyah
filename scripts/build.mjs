@@ -5,7 +5,7 @@ await import('./build-adhkar.mjs');
 await import('./build-discover.mjs');
 fs.mkdirSync('dist/server',{recursive:true});fs.mkdirSync('dist/.openai',{recursive:true});fs.mkdirSync('public',{recursive:true});
 await build({entryPoints:['client.js'],outfile:'public/app.js',bundle:true,minify:true,format:'esm',platform:'browser'});
-for(const f of ['index.html','style.css','sw.js','icon.svg','manifest.webmanifest'])fs.copyFileSync(f,'public/'+f);
+for(const f of ['index.html','style.css','sw.js','icon.svg','manifest.webmanifest','CNAME'])fs.copyFileSync(f,'public/'+f);
 const hash=crypto.createHash('sha256').update(fs.readFileSync('public/app.js')).digest('hex').slice(0,12);
 const appName='app.'+hash+'.js';fs.copyFileSync('public/app.js','public/'+appName);
 const styleHash=crypto.createHash('sha256').update(fs.readFileSync('style.css')).digest('hex').slice(0,12),styleName='style.'+styleHash+'.css';fs.copyFileSync('style.css','public/'+styleName);

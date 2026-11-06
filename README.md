@@ -1,6 +1,6 @@
 # نِيّة — NIYYAH
 
-Development release 0.1. Frontend: GitHub Pages. API and database: Cloudflare Workers and D1 in the owner’s Cloudflare account. API: https://niyyah-api.barboodmarwan.workers.dev. No custom domain.
+Development release. Frontend: GitHub Pages. API and database: Cloudflare Workers and D1 in the owner’s Cloudflare account. API: https://niyyah-api.barboodmarwan.workers.dev. Canonical website: https://niyyah.marwanbarbood.com/. The API and database remain hosted on Cloudflare.
 
 ## Run
 
@@ -35,3 +35,7 @@ Four additional source-checked knowledge cards cover intention (Bukhari 1), stea
 ## Discover and page reader
 
 54 source-checked original educational summaries with citations, four learning paths, local read-progress, and optional comprehension quizzes. No scholar approval is claimed. Sana selects only among up to six keyword-retrieved article IDs and returns stored summaries/references, never invented quotations. Quran page mode is the default; it renders the owner’s exact source body lines across 604 source-defined pages, using the unmodified OFL-licensed Amiri Quran font. Page/surah/juz navigation, page bookmarks, font scaling, arrow keys/swipes, offline page/font downloads and continuous-study mode are available. Original malformed verse markers remain visible and flagged; this is not a verified printed Madinah mushaf. To rebuild the page package: node scripts/build-quran-pages.mjs PATH_TO_APPROVED_ARQURAN_TXT. Test full line preservation with node scripts/test-pages-and-discovery.mjs PATH_TO_APPROVED_ARQURAN_TXT.
+
+## Custom domain
+
+GitHub Pages custom domain and repository homepage: `niyyah.marwanbarbood.com`. DNS-only CNAME: `niyyah` → `marwanywr3-lab.github.io` (without a repository path). The Actions artifact includes CNAME for portability; GitHub Pages settings are authoritative for workflow deployments. HTTPS must be enforced after GitHub provisions its certificate. Cloudflare API CORS accepts the custom origin and the legacy GitHub Pages origin. API root redirects to the canonical site. Relative asset, manifest, and service-worker URLs work at the custom domain root. Browser-local data and installed app storage are origin-scoped; use Settings → export JSON and restore at the new origin when migrating from the legacy address.

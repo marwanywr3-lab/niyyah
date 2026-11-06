@@ -11,7 +11,7 @@ let state=JSON.parse(localStorage.getItem('niyyah-v1')||'{"prayers":{},"notes":[
 const save=()=>localStorage.setItem('niyyah-v1',JSON.stringify(state));
 const day=()=>new Date().toLocaleDateString('en-CA');
 const fmt=d=>new Intl.DateTimeFormat('ar',{hour:'numeric',minute:'2-digit'}).format(d);
-let user=null,revision=0;const API=location.hostname.endsWith('github.io')?'https://niyyah-api.barboodmarwan.workers.dev':'';
+let user=null,revision=0;const API=(location.hostname==='niyyah.marwanbarbood.com'||location.hostname.endsWith('github.io'))?'https://niyyah-api.barboodmarwan.workers.dev':'';
 async function api(path,data){const r=await fetch(API+'/api/'+path,{method:data?'POST':'GET',headers:{'Content-Type':'application/json',...(sessionStorage.token?{Authorization:'Bearer '+sessionStorage.token}:{})},...(data?{body:JSON.stringify(data)}:{})});const b=await r.json();if(!r.ok)throw Error(b.error||'تعذر إتمام الطلب');return b;}
 function toast(t){$('#toast').textContent=t;$('#toast').hidden=false;setTimeout(()=>$('#toast').hidden=true,4500);}
 function params(){const p=CalculationMethod[state.method]();p.madhab=+state.madhab===1?Madhab.Hanafi:Madhab.Shafi;return p;}

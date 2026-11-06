@@ -10,7 +10,7 @@ async function hash(password,salt){const k=await crypto.subtle.importKey('raw',n
 function equal(a,b){let v=a.length^b.length;for(let i=0;i<Math.max(a.length,b.length);i++)v|=(a.charCodeAt(i)||0)^(b.charCodeAt(i)||0);return v===0;}
 export async function handle(request,env){
  const url=new URL(request.url),origin=request.headers.get('origin');
- const allowed=[url.origin,'https://marwanywr3-lab.github.io'];
+ const allowed=[url.origin,'https://niyyah.marwanbarbood.com','https://marwanywr3-lab.github.io'];
  if(origin&&!allowed.includes(origin))return json({error:'Origin rejected'},403);
  const cors=origin?{'Access-Control-Allow-Origin':origin,'Vary':'Origin','Access-Control-Allow-Headers':'Content-Type,Authorization','Access-Control-Allow-Methods':'GET,POST,OPTIONS'}:{};
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:cors});
