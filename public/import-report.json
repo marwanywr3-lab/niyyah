@@ -1,0 +1,897 @@
+{
+  "source": "ARQURAN.TXT",
+  "edition": "2.08 (file header)",
+  "sha256": "7ef9809b2d684c17efc84a2e50443af0af963f03eff0cb805fa094e1912ec2ba",
+  "surahs": 114,
+  "verses": 6231,
+  "issues": [
+    {
+      "surah": 7,
+      "trailing": "{س} ."
+    },
+    {
+      "surah": 53,
+      "trailing": "{ س } ."
+    },
+    {
+      "surah": 96,
+      "trailing": "{ س } ."
+    },
+    {
+      "surah": 109,
+      "trailing": "وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ (5} لَكُمْ دِينُكُمْ وَلِيَ دِينِ (6}"
+    },
+    {
+      "surah": 2,
+      "index": 179,
+      "number": 181
+    },
+    {
+      "surah": 2,
+      "index": 255,
+      "number": 265
+    },
+    {
+      "surah": 6,
+      "index": 130,
+      "number": 31
+    },
+    {
+      "surah": 15,
+      "index": 60,
+      "number": 60
+    },
+    {
+      "surah": 20,
+      "index": 14,
+      "number": 17
+    },
+    {
+      "surah": 20,
+      "index": 15,
+      "number": 18
+    },
+    {
+      "surah": 20,
+      "index": 16,
+      "number": 19
+    },
+    {
+      "surah": 20,
+      "index": 17,
+      "number": 20
+    },
+    {
+      "surah": 20,
+      "index": 18,
+      "number": 21
+    },
+    {
+      "surah": 20,
+      "index": 19,
+      "number": 22
+    },
+    {
+      "surah": 20,
+      "index": 20,
+      "number": 23
+    },
+    {
+      "surah": 20,
+      "index": 21,
+      "number": 24
+    },
+    {
+      "surah": 20,
+      "index": 22,
+      "number": 25
+    },
+    {
+      "surah": 20,
+      "index": 23,
+      "number": 26
+    },
+    {
+      "surah": 20,
+      "index": 24,
+      "number": 27
+    },
+    {
+      "surah": 20,
+      "index": 25,
+      "number": 28
+    },
+    {
+      "surah": 20,
+      "index": 26,
+      "number": 29
+    },
+    {
+      "surah": 20,
+      "index": 27,
+      "number": 30
+    },
+    {
+      "surah": 20,
+      "index": 28,
+      "number": 31
+    },
+    {
+      "surah": 20,
+      "index": 29,
+      "number": 32
+    },
+    {
+      "surah": 20,
+      "index": 30,
+      "number": 33
+    },
+    {
+      "surah": 20,
+      "index": 31,
+      "number": 34
+    },
+    {
+      "surah": 20,
+      "index": 32,
+      "number": 35
+    },
+    {
+      "surah": 20,
+      "index": 33,
+      "number": 36
+    },
+    {
+      "surah": 20,
+      "index": 34,
+      "number": 37
+    },
+    {
+      "surah": 20,
+      "index": 35,
+      "number": 38
+    },
+    {
+      "surah": 20,
+      "index": 36,
+      "number": 39
+    },
+    {
+      "surah": 20,
+      "index": 37,
+      "number": 40
+    },
+    {
+      "surah": 20,
+      "index": 38,
+      "number": 41
+    },
+    {
+      "surah": 20,
+      "index": 39,
+      "number": 42
+    },
+    {
+      "surah": 20,
+      "index": 40,
+      "number": 43
+    },
+    {
+      "surah": 20,
+      "index": 41,
+      "number": 44
+    },
+    {
+      "surah": 20,
+      "index": 42,
+      "number": 45
+    },
+    {
+      "surah": 20,
+      "index": 43,
+      "number": 46
+    },
+    {
+      "surah": 20,
+      "index": 44,
+      "number": 47
+    },
+    {
+      "surah": 20,
+      "index": 45,
+      "number": 48
+    },
+    {
+      "surah": 20,
+      "index": 46,
+      "number": 49
+    },
+    {
+      "surah": 20,
+      "index": 47,
+      "number": 50
+    },
+    {
+      "surah": 20,
+      "index": 48,
+      "number": 51
+    },
+    {
+      "surah": 20,
+      "index": 49,
+      "number": 52
+    },
+    {
+      "surah": 20,
+      "index": 50,
+      "number": 53
+    },
+    {
+      "surah": 20,
+      "index": 51,
+      "number": 54
+    },
+    {
+      "surah": 20,
+      "index": 52,
+      "number": 55
+    },
+    {
+      "surah": 20,
+      "index": 53,
+      "number": 56
+    },
+    {
+      "surah": 20,
+      "index": 54,
+      "number": 57
+    },
+    {
+      "surah": 20,
+      "index": 55,
+      "number": 58
+    },
+    {
+      "surah": 20,
+      "index": 56,
+      "number": 59
+    },
+    {
+      "surah": 20,
+      "index": 57,
+      "number": 60
+    },
+    {
+      "surah": 20,
+      "index": 58,
+      "number": 61
+    },
+    {
+      "surah": 20,
+      "index": 59,
+      "number": 62
+    },
+    {
+      "surah": 20,
+      "index": 60,
+      "number": 63
+    },
+    {
+      "surah": 20,
+      "index": 61,
+      "number": 64
+    },
+    {
+      "surah": 20,
+      "index": 62,
+      "number": 65
+    },
+    {
+      "surah": 20,
+      "index": 63,
+      "number": 66
+    },
+    {
+      "surah": 20,
+      "index": 64,
+      "number": 67
+    },
+    {
+      "surah": 20,
+      "index": 65,
+      "number": 68
+    },
+    {
+      "surah": 20,
+      "index": 66,
+      "number": 69
+    },
+    {
+      "surah": 20,
+      "index": 67,
+      "number": 70
+    },
+    {
+      "surah": 20,
+      "index": 68,
+      "number": 71
+    },
+    {
+      "surah": 20,
+      "index": 69,
+      "number": 72
+    },
+    {
+      "surah": 20,
+      "index": 70,
+      "number": 73
+    },
+    {
+      "surah": 20,
+      "index": 71,
+      "number": 74
+    },
+    {
+      "surah": 20,
+      "index": 72,
+      "number": 75
+    },
+    {
+      "surah": 20,
+      "index": 73,
+      "number": 76
+    },
+    {
+      "surah": 20,
+      "index": 74,
+      "number": 77
+    },
+    {
+      "surah": 20,
+      "index": 75,
+      "number": 78
+    },
+    {
+      "surah": 20,
+      "index": 76,
+      "number": 79
+    },
+    {
+      "surah": 20,
+      "index": 77,
+      "number": 80
+    },
+    {
+      "surah": 20,
+      "index": 78,
+      "number": 81
+    },
+    {
+      "surah": 20,
+      "index": 79,
+      "number": 82
+    },
+    {
+      "surah": 20,
+      "index": 80,
+      "number": 83
+    },
+    {
+      "surah": 20,
+      "index": 81,
+      "number": 84
+    },
+    {
+      "surah": 20,
+      "index": 82,
+      "number": 85
+    },
+    {
+      "surah": 20,
+      "index": 83,
+      "number": 86
+    },
+    {
+      "surah": 20,
+      "index": 84,
+      "number": 87
+    },
+    {
+      "surah": 20,
+      "index": 85,
+      "number": 88
+    },
+    {
+      "surah": 20,
+      "index": 86,
+      "number": 89
+    },
+    {
+      "surah": 20,
+      "index": 87,
+      "number": 90
+    },
+    {
+      "surah": 20,
+      "index": 88,
+      "number": 91
+    },
+    {
+      "surah": 20,
+      "index": 89,
+      "number": 92
+    },
+    {
+      "surah": 20,
+      "index": 90,
+      "number": 93
+    },
+    {
+      "surah": 20,
+      "index": 91,
+      "number": 94
+    },
+    {
+      "surah": 20,
+      "index": 92,
+      "number": 95
+    },
+    {
+      "surah": 20,
+      "index": 93,
+      "number": 96
+    },
+    {
+      "surah": 20,
+      "index": 94,
+      "number": 97
+    },
+    {
+      "surah": 20,
+      "index": 95,
+      "number": 98
+    },
+    {
+      "surah": 20,
+      "index": 96,
+      "number": 99
+    },
+    {
+      "surah": 20,
+      "index": 97,
+      "number": 100
+    },
+    {
+      "surah": 20,
+      "index": 98,
+      "number": 101
+    },
+    {
+      "surah": 20,
+      "index": 99,
+      "number": 102
+    },
+    {
+      "surah": 20,
+      "index": 100,
+      "number": 103
+    },
+    {
+      "surah": 20,
+      "index": 101,
+      "number": 104
+    },
+    {
+      "surah": 20,
+      "index": 102,
+      "number": 105
+    },
+    {
+      "surah": 20,
+      "index": 103,
+      "number": 106
+    },
+    {
+      "surah": 20,
+      "index": 104,
+      "number": 107
+    },
+    {
+      "surah": 20,
+      "index": 105,
+      "number": 108
+    },
+    {
+      "surah": 20,
+      "index": 106,
+      "number": 109
+    },
+    {
+      "surah": 20,
+      "index": 107,
+      "number": 110
+    },
+    {
+      "surah": 20,
+      "index": 108,
+      "number": 111
+    },
+    {
+      "surah": 20,
+      "index": 109,
+      "number": 112
+    },
+    {
+      "surah": 20,
+      "index": 110,
+      "number": 113
+    },
+    {
+      "surah": 20,
+      "index": 111,
+      "number": 114
+    },
+    {
+      "surah": 20,
+      "index": 112,
+      "number": 115
+    },
+    {
+      "surah": 20,
+      "index": 113,
+      "number": 116
+    },
+    {
+      "surah": 20,
+      "index": 114,
+      "number": 117
+    },
+    {
+      "surah": 20,
+      "index": 115,
+      "number": 118
+    },
+    {
+      "surah": 20,
+      "index": 116,
+      "number": 119
+    },
+    {
+      "surah": 20,
+      "index": 117,
+      "number": 120
+    },
+    {
+      "surah": 20,
+      "index": 118,
+      "number": 121
+    },
+    {
+      "surah": 20,
+      "index": 119,
+      "number": 122
+    },
+    {
+      "surah": 20,
+      "index": 120,
+      "number": 123
+    },
+    {
+      "surah": 20,
+      "index": 121,
+      "number": 124
+    },
+    {
+      "surah": 20,
+      "index": 122,
+      "number": 125
+    },
+    {
+      "surah": 20,
+      "index": 123,
+      "number": 126
+    },
+    {
+      "surah": 20,
+      "index": 124,
+      "number": 127
+    },
+    {
+      "surah": 20,
+      "index": 125,
+      "number": 128
+    },
+    {
+      "surah": 20,
+      "index": 126,
+      "number": 129
+    },
+    {
+      "surah": 20,
+      "index": 127,
+      "number": 130
+    },
+    {
+      "surah": 20,
+      "index": 128,
+      "number": 131
+    },
+    {
+      "surah": 20,
+      "index": 129,
+      "number": 132
+    },
+    {
+      "surah": 20,
+      "index": 130,
+      "number": 133
+    },
+    {
+      "surah": 20,
+      "index": 131,
+      "number": 134
+    },
+    {
+      "surah": 20,
+      "index": 132,
+      "number": 135
+    },
+    {
+      "surah": 22,
+      "index": 27,
+      "number": 27
+    },
+    {
+      "surah": 25,
+      "index": 56,
+      "number": 55
+    },
+    {
+      "surah": 37,
+      "index": 181,
+      "number": 181
+    },
+    {
+      "surah": 38,
+      "index": 39,
+      "number": 41
+    },
+    {
+      "surah": 38,
+      "index": 40,
+      "number": 42
+    },
+    {
+      "surah": 38,
+      "index": 41,
+      "number": 43
+    },
+    {
+      "surah": 38,
+      "index": 42,
+      "number": 44
+    },
+    {
+      "surah": 38,
+      "index": 43,
+      "number": 45
+    },
+    {
+      "surah": 38,
+      "index": 44,
+      "number": 46
+    },
+    {
+      "surah": 38,
+      "index": 45,
+      "number": 47
+    },
+    {
+      "surah": 38,
+      "index": 46,
+      "number": 48
+    },
+    {
+      "surah": 38,
+      "index": 47,
+      "number": 49
+    },
+    {
+      "surah": 38,
+      "index": 48,
+      "number": 50
+    },
+    {
+      "surah": 38,
+      "index": 49,
+      "number": 51
+    },
+    {
+      "surah": 38,
+      "index": 50,
+      "number": 52
+    },
+    {
+      "surah": 38,
+      "index": 51,
+      "number": 53
+    },
+    {
+      "surah": 38,
+      "index": 52,
+      "number": 54
+    },
+    {
+      "surah": 38,
+      "index": 53,
+      "number": 55
+    },
+    {
+      "surah": 38,
+      "index": 54,
+      "number": 56
+    },
+    {
+      "surah": 38,
+      "index": 55,
+      "number": 57
+    },
+    {
+      "surah": 38,
+      "index": 56,
+      "number": 58
+    },
+    {
+      "surah": 38,
+      "index": 57,
+      "number": 59
+    },
+    {
+      "surah": 38,
+      "index": 58,
+      "number": 60
+    },
+    {
+      "surah": 38,
+      "index": 59,
+      "number": 61
+    },
+    {
+      "surah": 38,
+      "index": 60,
+      "number": 62
+    },
+    {
+      "surah": 38,
+      "index": 61,
+      "number": 63
+    },
+    {
+      "surah": 38,
+      "index": 62,
+      "number": 64
+    },
+    {
+      "surah": 38,
+      "index": 63,
+      "number": 65
+    },
+    {
+      "surah": 38,
+      "index": 64,
+      "number": 66
+    },
+    {
+      "surah": 38,
+      "index": 65,
+      "number": 67
+    },
+    {
+      "surah": 38,
+      "index": 66,
+      "number": 68
+    },
+    {
+      "surah": 38,
+      "index": 67,
+      "number": 69
+    },
+    {
+      "surah": 38,
+      "index": 68,
+      "number": 70
+    },
+    {
+      "surah": 38,
+      "index": 69,
+      "number": 71
+    },
+    {
+      "surah": 38,
+      "index": 70,
+      "number": 72
+    },
+    {
+      "surah": 38,
+      "index": 71,
+      "number": 73
+    },
+    {
+      "surah": 38,
+      "index": 72,
+      "number": 74
+    },
+    {
+      "surah": 38,
+      "index": 73,
+      "number": 75
+    },
+    {
+      "surah": 38,
+      "index": 74,
+      "number": 76
+    },
+    {
+      "surah": 38,
+      "index": 75,
+      "number": 77
+    },
+    {
+      "surah": 38,
+      "index": 76,
+      "number": 78
+    },
+    {
+      "surah": 38,
+      "index": 77,
+      "number": 79
+    },
+    {
+      "surah": 38,
+      "index": 78,
+      "number": 80
+    },
+    {
+      "surah": 38,
+      "index": 79,
+      "number": 81
+    },
+    {
+      "surah": 38,
+      "index": 80,
+      "number": 82
+    },
+    {
+      "surah": 38,
+      "index": 81,
+      "number": 83
+    },
+    {
+      "surah": 38,
+      "index": 82,
+      "number": 84
+    },
+    {
+      "surah": 38,
+      "index": 83,
+      "number": 85
+    },
+    {
+      "surah": 38,
+      "index": 84,
+      "number": 86
+    },
+    {
+      "surah": 38,
+      "index": 85,
+      "number": 87
+    },
+    {
+      "surah": 38,
+      "index": 86,
+      "number": 88
+    }
+  ],
+  "review": "Structural validation only; licensing and independent textual review pending",
+  "whitespace": "Line breaks preserved within each verse; only surrounding whitespace and organizational markers removed; initial basmala remains with first numbered verse where present in source"
+}

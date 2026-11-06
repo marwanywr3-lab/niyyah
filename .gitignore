@@ -1,0 +1,7 @@
+dist/
+site.tar.gz
+node_modules/
+.env*
+!.env.example
+worker/assets.js
+.wrangler/

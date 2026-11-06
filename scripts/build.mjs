@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {build} from 'esbuild';
+fs.mkdirSync('dist/server',{recursive:true});fs.mkdirSync('dist/.openai',{recursive:true});fs.mkdirSync('public',{recursive:true});
+await build({entryPoints:['client.js'],outfile:'public/app.js',bundle:true,minify:true,format:'esm',platform:'browser'});
+for(const f of ['index.html','style.css','sw.js','icon.svg','manifest.webmanifest'])fs.copyFileSync(f,'public/'+f);
+for(const f of ['quran.json','import-report.json'])fs.copyFileSync('data/'+f,'public/'+f);
+const assets={};for(const f of fs.readdirSync('public'))assets['/'+f]=fs.readFileSync('public/'+f,'utf8');assets['/']=assets['/index.html'];
+fs.writeFileSync('worker/assets.js','export default '+JSON.stringify(assets));
+await build({entryPoints:['worker/main.js'],outfile:'worker/index.js',bundle:true,format:'esm',platform:'neutral',minify:true});
+fs.copyFileSync('worker/index.js','dist/server/index.js');fs.copyFileSync('.openai/hosting.json','dist/.openai/hosting.json');
+console.log('Built GitHub Pages frontend and Cloudflare Worker');
