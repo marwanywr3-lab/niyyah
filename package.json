@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "validate": "node scripts/validate-artifact.mjs",
-    "test": "node scripts/check.mjs"
+    "test": "node scripts/check.mjs && node scripts/test-sana.mjs && node scripts/test-religious-library.mjs && node scripts/check-adhkar-sources.mjs"
   },
   "version": "1.0.0",
   "description": "NIYYAH development PWA and Cloudflare API",
