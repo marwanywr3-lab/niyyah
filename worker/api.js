@@ -1,4 +1,5 @@
 import {sana,apiKeys} from './sana.js';
+import {vault} from './vault.js';
 import {publishedEntries} from './religious-library.js';
 import {knowledge} from '../data/knowledge-source.mjs';
 import {discoverArticles} from '../data/discover-source.mjs';
@@ -18,7 +19,7 @@ export async function handle(request,env){
 }
 async function api(request,env,url){
  const path=url.pathname.slice(5);
- if(path==='health')return json({ok:true,database:!!env.DB,aiEnabled:!!apiKeys(env).length&&env.SANA_DISABLED!=='true',aiScope:'app-support-and-sourced-adhkar',model:'gemini-3.5-flash-lite',libraryEntries:publishedEntries.length,version:'0.4.0',requestTokenLimit:500});
+ if(path==='health')return json({ok:true,database:!!env.DB,aiEnabled:!!apiKeys(env).length&&env.SANA_DISABLED!=='true',aiScope:'app-support-and-sourced-adhkar',model:'gemini-3.5-flash-lite',libraryEntries:publishedEntries.length,version:'0.5.0',sync:{storage:'cloudflare-d1',encrypted:true,history:3},requestTokenLimit:500});
  if(path==='library'&&request.method==='GET')return json({version:'1.1.0',review:'source_checked; independent scholar review pending',entries:publishedEntries,knowledge,discover:discoverArticles});
  if(!env.DB)return json({error:'قاعدة البيانات لم تُربط بعد'},503);
  const db=env.DB;
@@ -35,23 +36,23 @@ async function api(request,env,url){
   const token=random();await db.prepare('INSERT INTO sessions(token_hash,user_id,expires_at) VALUES(?,?,?)').bind(await digest(token),user.id,Date.now()+86400000).run();return json({token,user:{id:user.id,username:user.username},...(recoveryCode?{recoveryCode}:{})});
  }
  const token=request.headers.get('authorization')?.replace(/^Bearer /,'');if(!token)return json({error:'سجل الدخول أولًا'},401);
- const user=await db.prepare('SELECT u.id,u.username FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(await digest(token),Date.now()).first();if(!user)return json({error:'انتهت الجلسة'},401);
+ const user=await db.prepare('SELECT u.id,u.username FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(await digest(token),Date.now()).first();
+ if(!user)return json({error:'انتهت الجلسة'},401);
  if(path==='me'&&request.method==='GET')return json({user});
+ if(path==='vault/history'&&request.method==='GET'){
+  const version=Number(url.searchParams.get('version'));
+  if(!Number.isSafeInteger(version)||version<1)return json({error:'إصدار غير صالح'},400);
+  const record=await db.prepare('SELECT version,salt,iv,ciphertext,updated_at FROM vault_history WHERE user_id=? AND version=?').bind(user.id,version).first();
+  return record?json({record}):json({error:'النسخة غير موجودة لهذا الحساب'},404);
+ }
  if(path==='sana/status'&&request.method==='GET'){
   if(!env.GEMINI_API_KEY)return json({configured:false},503);
   const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models',{headers:{'x-goog-api-key':env.GEMINI_API_KEY}});if(!r.ok)return json({configured:true,providerStatus:r.status},502);
   const data=await r.json();return json({configured:true,models:data.models?.filter(m=>m.supportedGenerationMethods?.includes('generateContent')).map(m=>m.name).filter(n=>n.includes('flash'))||[]});
  }
  if(path==='logout'&&request.method==='POST'){await db.prepare('DELETE FROM sessions WHERE token_hash=?').bind(await digest(token)).run();return json({ok:true});}
- if(path==='vault'&&request.method==='GET'){const record=await db.prepare('SELECT version,salt,iv,ciphertext FROM vaults WHERE user_id=?').bind(user.id).first();return json({record});}
- if(path==='vault'&&request.method==='POST'){
-  if(!Number.isSafeInteger(body.version)||body.version<0||!/^\w{32}$/.test(body.salt)||!/^\w{24}$/.test(body.iv)||!/^([a-f0-9]{2}){16,200000}$/.test(body.ciphertext))return json({error:'نسخة غير صالحة'},400);
-  const row=await db.prepare('INSERT INTO vaults(user_id,version,salt,iv,ciphertext) SELECT ?,1,?,?,? WHERE ?=0 ON CONFLICT(user_id) DO UPDATE SET version=version+1,salt=excluded.salt,iv=excluded.iv,ciphertext=excluded.ciphertext WHERE vaults.version=? RETURNING version').bind(user.id,body.salt,body.iv,body.ciphertext,body.version,body.version).first();
-  // Existing rows must use a conditional update when version > 0.
-  if(!row&&body.version>0){const updated=await db.prepare('UPDATE vaults SET version=version+1,salt=?,iv=?,ciphertext=? WHERE user_id=? AND version=? RETURNING version').bind(body.salt,body.iv,body.ciphertext,user.id,body.version).first();if(updated)return json(updated);}
-  return row?json(row):json({error:'تعارض إصدارات؛ لم يتم استبدال نسخة الخادم'},409);
- }
- if(path==='account/delete'&&request.method==='POST'){const u=await db.prepare('SELECT password_hash,salt FROM users WHERE id=?').bind(user.id).first();if(!equal(u.password_hash,await hash(String(body.password||''),u.salt)))return json({error:'كلمة المرور غير صحيحة'},401);await db.batch([db.prepare('DELETE FROM vaults WHERE user_id=?').bind(user.id),db.prepare('DELETE FROM sessions WHERE user_id=?').bind(user.id),db.prepare('DELETE FROM users WHERE id=?').bind(user.id)]);return json({ok:true});}
+ if(path==='vault')return vault(request,body,user,db);
+ if(path==='account/delete'&&request.method==='POST'){const u=await db.prepare('SELECT password_hash,salt FROM users WHERE id=?').bind(user.id).first();if(!equal(u.password_hash,await hash(String(body.password||''),u.salt)))return json({error:'كلمة المرور غير صحيحة'},401);await db.batch([db.prepare('DELETE FROM vault_history WHERE user_id=?').bind(user.id),db.prepare('DELETE FROM vaults WHERE user_id=?').bind(user.id),db.prepare('DELETE FROM sessions WHERE user_id=?').bind(user.id),db.prepare('DELETE FROM users WHERE id=?').bind(user.id)]);return json({ok:true});}
  if(path==='sana')return sana(request,body,user,env);
  return json({error:'Not found'},404);
 }

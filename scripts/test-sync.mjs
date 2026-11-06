@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {DatabaseSync} from 'node:sqlite';
+import {handle} from '../worker/api.js';
+import {vaultKey,newSalt,encryptState,decryptState} from '../lib/vault-crypto.js';
+import {SyncEngine} from '../lib/sync-engine.js';
+const sqlite=new DatabaseSync(':memory:');
+sqlite.exec(fs.readFileSync('drizzle/0000_initial.sql','utf8').replaceAll('--> statement-breakpoint',''));
+sqlite.exec(fs.readFileSync('drizzle/0001_sana.sql','utf8'));
+sqlite.exec(fs.readFileSync('drizzle/0002_sync.sql','utf8'));
+const DB={prepare(sql){let values=[];return {bind(...args){values=args;return this;},async first(){return sqlite.prepare(sql).get(...values)||null;},async run(){return sqlite.prepare(sql).run(...values);},async all(){return {results:sqlite.prepare(sql).all(...values)};}};}};
+const env={DB},alice=crypto.randomUUID(),bob=crypto.randomUUID();
+const digest=async value=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value))),x=>x.toString(16).padStart(2,'0')).join('');
+const call=async(token,path,body)=>handle(new Request('https://api.example/api/'+path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+token,Origin:'https://niyyah.marwanbarbood.com','Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})}),env);
+assert.equal((await call('forged.jwt.token','me')).status,401);
+assert.equal(sqlite.prepare('SELECT count(*) AS n FROM users').get().n,0);
+for(const [id,token] of [['testA',alice],['testB',bob]]){sqlite.prepare('INSERT INTO users(id,username,password_hash,salt,recovery_hash,created_at) VALUES(?,?,?,?,?,?)').run(id,id,'unused','unused','unused',new Date().toISOString());sqlite.prepare('INSERT INTO sessions(token_hash,user_id,expires_at) VALUES(?,?,?)').run(await digest(token),id,Date.now()+60000);}
+const a=(await(await call(alice,'me')).json()).user,b=(await(await call(bob,'me')).json()).user;assert.notEqual(a.id,b.id);
+await call(alice,'me');assert.equal(sqlite.prepare('SELECT count(*) AS n FROM users').get().n,2);
+const state={prayers:{'2026-11-06:fajr':{recordedAt:'2026-11-06'}},notes:[{id:'note-1',text:'private note',ref:'1:1'}],duas:[],bookmarks:['1:1']};
+const pass='a unique vault passphrase',salt=newSalt(),key=await vaultKey(pass,salt),sealed=await encryptState(state,key,salt);
+assert.ok(!sealed.ciphertext.includes('private'));assert.deepEqual(await decryptState(sealed,key),state);
+await assert.rejects(decryptState(sealed,await vaultKey('the wrong vault passphrase',salt)));
+await assert.rejects(decryptState({...sealed,ciphertext:'00'+sealed.ciphertext.slice(2)},key));
+assert.equal((await call(alice,'vault',{version:0,...sealed,user_id:b.id})).status,200);
+assert.equal((await(await call(bob,'vault')).json()).record,null);
+assert.equal((await call(alice,'vault',{version:0,...sealed})).status,409);
+assert.equal((await call(alice,'vault',{version:1,...sealed,salt:'_'.repeat(32)})).status,400);
+const race=await Promise.all([call(alice,'vault',{version:1,...sealed}),call(alice,'vault',{version:1,...sealed})]);assert.deepEqual(race.map(x=>x.status).sort(),[200,409]);
+for(let version=2;version<6;version++)assert.equal((await call(alice,'vault',{version,...sealed})).status,200);
+const stored=await(await call(alice,'vault')).json();assert.equal(stored.record.version,6);assert.deepEqual(stored.history.map(h=>h.version),[5,4,3]);
+assert.equal((await call(bob,'vault/history?version=5')).status,404);assert.equal((await call(alice,'vault/history?version=2')).status,404);
+assert.deepEqual(await decryptState((await(await call(alice,'vault/history?version=5')).json()).record,key),state);
+const cloudApi=token=>async(path,body)=>{const r=await call(token,path,body),d=await r.json();if(!r.ok){const e=Error(d.error);e.status=r.status;throw e;}return d;};
+let localA=structuredClone(state),localB={prayers:{},notes:[],duas:[],bookmarks:[]},backups=0;
+const one=new SyncEngine({api:cloudApi(alice),getState:()=>structuredClone(localA),applyState:x=>localA=x,backup:()=>backups++});
+const two=new SyncEngine({api:cloudApi(alice),getState:()=>structuredClone(localB),applyState:x=>localB=x,backup:()=>backups++});
+try{
+ const first=await one.inspect(pass),second=await two.inspect(pass);await one.start(first,'remote');await two.start(second,'remote');assert.deepEqual(localB,state);
+ localA.notes.push({id:'a-new-note',text:'device A'});one.changed();await one.flush();
+ await two.refresh();assert.equal(localB.notes.at(-1).text,'device A');
+ localA.notes.push({id:'a-second-note',text:'latest A'});one.changed();localB.notes.push({id:'b-local-note',text:'preserve B'});two.changed();
+ await one.flush();await two.flush();assert.equal(two.enabled,false);assert.equal(localB.notes.at(-1).text,'preserve B');
+ const latest=await cloudApi(alice)('vault');assert.equal((await decryptState(latest.record,key)).notes.at(-1).text,'latest A');assert.ok(backups>=3);
+ const before=one.epoch;one.lock();assert.ok(one.epoch>before);assert.equal(one.key,null);assert.equal(one.enabled,false);
+}finally{one.lock();two.lock();}
+console.log('Session validation, cross-account isolation, AES-GCM integrity, wrong-passphrase safety, atomic CAS conflicts, 3-version history, two-device sync and lock passed');
