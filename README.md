@@ -1,6 +1,6 @@
 # نِيّة — NIYYAH
 
-Development release 0.1. Frontend: GitHub Pages. API and database: Cloudflare Workers and D1 through Sites. No custom domain.
+Development release 0.1. Frontend: GitHub Pages. API and database: Cloudflare Workers and D1 in the owner’s Cloudflare account. API: https://niyyah-api.barboodmarwan.workers.dev. No custom domain.
 
 ## Run
 
@@ -16,7 +16,7 @@ This is an incomplete development implementation of the supplied specification. 
 
 Pending: full English localization, verified Madinah page layout, licensed tafsir/audio/adhkar, memorization and spaced review, khatma plans, learning content and quizzes, seasons and Friday opening, notifications/device support matrix, sensor compass, granular record sync/conflict review, key recovery UX, administrator permissions/MFA/publishing/audit interface, migration/rollback exercises, browser/device accessibility and acceptance testing. Gemini intentionally disabled until trusted retrieval, reference verification, atomic monthly token reservation, actual-usage settlement and total spend cap are implemented and tested. No secrets are shipped in this repository. R2 is not provisioned because no approved media files are ready.
 
-Database schema is versioned under `drizzle/`. Sites applies migrations at deployment, not at request time. The deployment provisions resources under its hosting account, not automatically in the owner's personal Cloudflare dashboard. For a personal-account migration, create D1, apply SQL, bind as DB and deploy `worker/index.js` with Wrangler. Maintain same-origin API or the explicitly allowed Pages origin.
+Database schema is versioned under `drizzle/`. Sites applies migrations at deployment, not at request time. The primary API deployment uses the owner’s personal Cloudflare account. A separate private Sites development deployment also exists and is not used by the Pages frontend. For a personal-account migration, create D1, apply SQL, bind as DB and deploy `worker/index.js` with Wrangler. Maintain same-origin API or the explicitly allowed Pages origin.
 
 Production operating limits: rate-limit rows and expired sessions require scheduled retention cleanup before launch; no backup retention duration is claimed; delete-account API removes active records only and provider backups follow provider policy. Browser storage is not a guaranteed backup. Complete independent security review before handling real personal data.
 
