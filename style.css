@@ -26,3 +26,55 @@ nav button{font-size:14px;font-weight:400;border-radius:4px;border-inline-start:
 .sana-launcher{color:var(--green,#526a57);font-weight:700;min-width:58px}.sana-quick{max-width:540px}.sana-quick textarea{min-height:80px}.sana-reference{display:grid;grid-template-columns:1fr 1fr;gap:16px}.sana-reference input{width:100%}.sana-consent{display:flex;gap:8px;align-items:flex-start}.sana-consent input{width:auto;margin-top:6px}.sana-quick small{display:block;margin-top:14px;color:var(--muted,#777)}.tafsir-link{display:inline-block;padding:10px 0}.sana-quick hr{border:0;border-top:1px solid var(--line,#ddd);margin:20px 0}button.mushaf-stop{display:inline-flex;align-items:center;justify-content:center;vertical-align:baseline;min-width:1.45em;min-height:1.45em;padding:0 .15em;margin:0 .06em;font-family:inherit;font-size:.64em;color:inherit;border:1px solid #b3a77b;background:transparent;border-radius:50%;line-height:1.25}button.mushaf-stop:hover,button.mushaf-stop:focus-visible{outline:2px solid #526a57;outline-offset:2px}
 
 .sync-comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.sync-comparison section{padding:14px;border:1px solid var(--line,#ddd);border-radius:8px}.sync-comparison h3{margin-top:0;font-size:1rem}.sync-comparison p{font-size:.9rem}#syncpreview button{margin:6px}#syncpause,#syncexport{margin-top:18px}
+
+/* Stage 1: responsive, facing-page Quran reader. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+body.mushaf-reading main{max-width:none;padding-inline:24px}
+.mushaf-reader{max-width:1460px;margin-inline:auto}
+.mushaf-heading{padding:22px 0 16px}.mushaf-heading h1{font-size:27px;margin:0}.mushaf-heading .eyebrow{margin-bottom:3px}.mushaf-heading>button{font-size:12px}
+.mushaf-commandbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:10px;position:sticky;top:0;z-index:7;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--line)}
+.mushaf-commandbar button{display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:44px;font-size:13px;padding:8px 12px}.mushaf-commandbar button:disabled,.mushaf-bottom-nav button:disabled{opacity:.38;cursor:default}
+.mushaf-range{text-align:center;font-size:14px;line-height:1.6;font-variant-numeric:tabular-nums}.mushaf-range small{font-size:11px;display:block}
+.mushaf-commandbar .mushaf-fullscreen{color:var(--sage)}.fullscreen-caption{font-size:12px}
+.mushaf-commandbar .mushaf-fullscreen[aria-pressed=true] .fullscreen-caption{display:inline}
+.mushaf-options{border-bottom:1px solid var(--line);margin-bottom:8px}.mushaf-options>summary{cursor:pointer;font-size:13px;padding:11px 2px;color:var(--sage);min-height:44px}.mushaf-options .mushaf-tools{padding:0 0 16px;gap:12px}.mushaf-options .mushaf-tools label{min-width:100px}.mushaf-options .mushaf-size{flex-basis:180px;max-width:240px}.mushaf-options #mushaf-jump-error{flex-basis:100%;margin:0;color:var(--ink);font-size:13px}.mushaf-options #mushaf-jump-error:empty{display:none}
+.mushaf-gesture-hint{text-align:center;font-size:12px;color:var(--muted);margin:10px 0 14px}
+.mushaf-spread{display:grid;grid-template-columns:minmax(0,1fr);max-width:730px;margin:0 auto;direction:rtl;touch-action:pan-y pinch-zoom;scroll-margin-top:84px;outline-offset:5px}
+.mushaf-spread.is-paired{max-width:1400px;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;align-items:stretch}
+.mushaf-spread .mushaf-page{container-type:inline-size;--reader-font:clamp(19px,4.3cqi,27px);width:100%;max-width:none;margin:0;padding:9px;min-width:0}
+.mushaf-spread.is-paired .mushaf-page{--reader-font:clamp(17px,4.3cqi,26px)}
+.mushaf-spread .mushaf-inner{padding:17px 16px;min-height:710px;height:100%;outline-offset:3px}
+.mushaf-spread .mushaf-line{font-size:calc(var(--reader-font)*var(--reading-scale,1));line-height:2.2;text-align:justify;text-align-last:auto;overflow-wrap:normal}
+.mushaf-spread .mushaf-section .mushaf-line:last-child{text-align-last:center}
+.mushaf-spread .mushaf-basmala{font-size:calc(var(--reader-font)*1.06*var(--reading-scale,1));line-height:2.3}
+.mushaf-spread .mushaf-surah{font-size:calc(var(--reader-font)*1.06);padding:7px;margin:15px 0}
+.mushaf-spread .mushaf-running{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:13px;font-size:11px;padding-bottom:9px}
+.mushaf-running>span:first-child{flex:1}.mushaf-page-save{padding:3px 7px;font-size:11px;min-height:32px;border-color:#c8b98d;border-radius:5px;color:inherit}.mushaf-page-save[aria-pressed=true]{background:#dacfaa44}
+.mushaf-spread .mushaf-page-number{margin-top:24px}
+.mushaf-spread.is-paired .right-page{border-start-end-radius:0;border-end-end-radius:0;box-shadow:inset 13px 0 18px -17px #56482f,0 8px 20px #3b402b08}
+.mushaf-spread.is-paired .left-page{border-start-start-radius:0;border-end-start-radius:0;box-shadow:inset -13px 0 18px -17px #56482f,0 8px 20px #3b402b08}
+.mushaf-reader.is-swiping #mushafsurface{user-select:none;cursor:grabbing}.mushaf-spread{cursor:grab}
+.mushaf-bottom-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;max-width:1400px;margin:18px auto}.mushaf-bottom-nav button{min-height:44px;font-size:13px}.mushaf-bottom-nav>span{font-size:12px;color:var(--muted)}
+.mushaf-reader .mushaf-foot{max-width:1400px;line-height:1.9;margin:18px auto}
+body.mushaf-fullscreen-active{overflow:hidden}
+.mushaf-reader:fullscreen,.mushaf-reader.is-focus{width:100%;height:100%;height:100dvh;max-width:none;overflow:auto;overscroll-behavior-y:contain;background:var(--bg);padding:0 max(12px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-bottom));scroll-padding-top:76px}
+.mushaf-reader.is-focus{position:fixed;inset:0;z-index:1000}
+.mushaf-reader:fullscreen .mushaf-heading,.mushaf-reader.is-focus .mushaf-heading{display:none}
+.mushaf-reader:fullscreen .mushaf-commandbar,.mushaf-reader.is-focus .mushaf-commandbar{padding-top:max(8px,env(safe-area-inset-top));max-width:1400px;margin:auto}
+.mushaf-reader:fullscreen .mushaf-options,.mushaf-reader.is-focus .mushaf-options{max-width:1400px;margin-inline:auto}
+.mushaf-reader:fullscreen .mushaf-gesture-hint,.mushaf-reader.is-focus .mushaf-gesture-hint{display:none}
+@media(max-width:1100px){
+ body.mushaf-reading .sidebar{top:auto;bottom:0;left:0;right:0;width:100%;height:73px;padding:0;z-index:5;border-top:1px solid var(--line);border-left:0}
+ body.mushaf-reading .sidebar .logo,body.mushaf-reading .tagline,body.mushaf-reading .sidebar-bottom{display:none}
+ body.mushaf-reading nav{display:flex;height:100%}
+ body.mushaf-reading nav button{padding:8px 2px;margin:0;border:0;border-top:2px solid transparent;border-radius:0;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:2px}
+ body.mushaf-reading nav button.active{border-top-color:var(--sage)}
+ body.mushaf-reading main{margin:0;padding:0 16px 86px}
+ .mushaf-spread.is-paired .mushaf-inner{padding-inline:12px}
+}
+@media(max-width:600px){
+ .mushaf-commandbar{gap:7px}.mushaf-commandbar button{min-width:42px;padding:8px}.mushaf-commandbar #previouspage>span,.mushaf-commandbar #nextpage>span,.fullscreen-caption{display:none}
+ .mushaf-range{font-size:13px}.mushaf-heading{padding:15px 0 12px}.mushaf-heading h1{font-size:25px}.mushaf-options .mushaf-tools{gap:9px}
+ .mushaf-spread .mushaf-inner{padding-inline:12px}.mushaf-gesture-hint{font-size:11px}.mushaf-bottom-nav{gap:6px}.mushaf-bottom-nav button{padding:8px 10px;font-size:12px}
+}
+@media(orientation:landscape) and (max-height:600px){body.mushaf-reading header{height:66px}.mushaf-reader .mushaf-heading{padding:10px 0}.mushaf-commandbar{padding-block:6px}.mushaf-gesture-hint{margin:6px 0}.mushaf-spread .mushaf-running{font-size:10px}}
