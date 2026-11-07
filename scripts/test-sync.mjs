@@ -7,7 +7,7 @@ import {SyncEngine} from '../lib/sync-engine.js';
 const sqlite=new DatabaseSync(':memory:');
 sqlite.exec(fs.readFileSync('drizzle/0000_initial.sql','utf8').replaceAll('--> statement-breakpoint',''));
 sqlite.exec(fs.readFileSync('drizzle/0001_sana.sql','utf8'));
-sqlite.exec(fs.readFileSync('drizzle/0002_sync.sql','utf8'));
+sqlite.exec(fs.readFileSync('drizzle/0002_sync.sql','utf8'));sqlite.exec(fs.readFileSync('drizzle/0003_admin.sql','utf8'));
 const DB={prepare(sql){let values=[];return {bind(...args){values=args;return this;},async first(){return sqlite.prepare(sql).get(...values)||null;},async run(){return sqlite.prepare(sql).run(...values);},async all(){return {results:sqlite.prepare(sql).all(...values)};}};}};
 const env={DB},alice=crypto.randomUUID(),bob=crypto.randomUUID();
 const digest=async value=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value))),x=>x.toString(16).padStart(2,'0')).join('');

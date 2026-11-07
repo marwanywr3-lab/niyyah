@@ -33,12 +33,15 @@ async function api(request,env,url){
   if(path==='register'){if(user)return json({error:'تعذر إنشاء الحساب بهذا الاسم'},400);const salt=random(),id=crypto.randomUUID();recoveryCode=random();await db.prepare('INSERT INTO users(id,username,password_hash,salt,recovery_hash,created_at) VALUES(?,?,?,?,?,?)').bind(id,username,await hash(password,salt),salt,await digest(recoveryCode),new Date().toISOString()).run();user={id,username};}
   else if(path==='recover'){if(!user||!equal(user.recovery_hash,await digest(String(body.recoveryCode||''))))return json({error:'بيانات الاستعادة غير صحيحة'},401);const salt=random();recoveryCode=random();await db.batch([db.prepare('UPDATE users SET password_hash=?,salt=?,recovery_hash=? WHERE id=?').bind(await hash(password,salt),salt,await digest(recoveryCode),user.id),db.prepare('DELETE FROM sessions WHERE user_id=?').bind(user.id)]);}
   else {const salt=user?.salt||'dummy-salt';const h=await hash(password,salt);if(!user||!equal(user.password_hash,h))return json({error:'اسم المستخدم أو كلمة المرور غير صحيحة'},401);}
-  const token=random();await db.prepare('INSERT INTO sessions(token_hash,user_id,expires_at) VALUES(?,?,?)').bind(await digest(token),user.id,Date.now()+86400000).run();return json({token,user:{id:user.id,username:user.username},...(recoveryCode?{recoveryCode}:{})});
+  const token=random();await db.prepare('INSERT INTO sessions(token_hash,user_id,expires_at) VALUES(?,?,?)').bind(await digest(token),user.id,Date.now()+30*86400000).run();return json({token,user:{id:user.id,username:user.username},...(recoveryCode?{recoveryCode}:{})});
  }
  const token=request.headers.get('authorization')?.replace(/^Bearer /,'');if(!token)return json({error:'سجل الدخول أولًا'},401);
  const user=await db.prepare('SELECT u.id,u.username FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').bind(await digest(token),Date.now()).first();
  if(!user)return json({error:'انتهت الجلسة'},401);
+ await db.prepare('UPDATE sessions SET expires_at=? WHERE token_hash=? AND expires_at<?').bind(Date.now()+30*86400000,await digest(token),Date.now()+29*86400000).run();
  if(path==='me'&&request.method==='GET')return json({user});
+ if(path==='notifications'&&request.method==='GET'){const result=await db.prepare('SELECT id,kind,message,created_at FROM user_notifications WHERE user_id=? AND read_at IS NULL ORDER BY created_at DESC LIMIT 25').bind(user.id).all();return json({notifications:result.results});}
+ if(path==='notifications/read'&&request.method==='POST'){const id=String(body.id||'');if(!/^[a-f0-9-]{36}$/.test(id))return json({error:'إشعار غير صالح'},400);await db.prepare('UPDATE user_notifications SET read_at=? WHERE id=? AND user_id=?').bind(new Date().toISOString(),id,user.id).run();return json({ok:true});}
  if(path==='vault/history'&&request.method==='GET'){
   const version=Number(url.searchParams.get('version'));
   if(!Number.isSafeInteger(version)||version<1)return json({error:'إصدار غير صالح'},400);

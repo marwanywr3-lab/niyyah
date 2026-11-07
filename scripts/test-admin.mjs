@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {DatabaseSync} from 'node:sqlite';
+import admin from '../admin/main.js';
+const sql=new DatabaseSync(':memory:');for(const file of ['0000_initial.sql','0001_sana.sql','0002_sync.sql','0003_admin.sql'])sql.exec(fs.readFileSync('drizzle/'+file,'utf8').replaceAll('--> statement-breakpoint',''));
+const DB={prepare(q){let values=[];return {bind(...v){values=v;return this;},async first(){return sql.prepare(q).get(...values)||null;},async run(){return sql.prepare(q).run(...values);},async all(){return {results:sql.prepare(q).all(...values)};}};},async batch(commands){for(const cmd of commands)await cmd.run();}};
+const call=(path,body,cookie,origin='https://admin.example')=>admin.fetch(new Request('https://admin.example/api/'+path,{method:body?'POST':'GET',headers:{...(body?{'Content-Type':'application/json',Origin:origin}:{}),...(cookie?{Cookie:cookie}:{})},...(body?{body:JSON.stringify(body)}:{})}),{DB});
+assert.equal((await call('users')).status,401);assert.equal((await call('setup',{code:'too-short'})).status,400);assert.equal((await call('setup',{code:'1234567890123456'},null,'https://evil.example')).status,403);
+const setup=await call('setup',{code:'Abcdefghijkl1234'});assert.equal(setup.status,200);const cookie=setup.headers.get('set-cookie').split(';')[0];assert.match(setup.headers.get('set-cookie'),/HttpOnly; Secure; SameSite=Strict/);assert.equal((await call('setup',{code:'Zbcdefghijkl1234'})).status,409);
+assert.equal((await call('login',{code:'wrongcode1234567'})).status,401);const id=crypto.randomUUID();sql.prepare('INSERT INTO users VALUES(?,?,?,?,?,?)').run(id,'sample','hash','salt','recover',new Date().toISOString());
+assert.equal((await call('users',null,cookie)).status,200);assert.equal((await call('limit',{userId:id,limit:1200},cookie)).status,200);assert.equal(sql.prepare('SELECT monthly_tokens FROM user_limits').get().monthly_tokens,1200);
+assert.equal((await call('notify',{userId:id,kind:'warning',message:'تنبيه'},cookie)).status,200);assert.equal(sql.prepare('SELECT COUNT(*) n FROM user_notifications').get().n,1);assert.equal((await call('delete',{userId:id,confirm:'wrong'},cookie)).status,400);assert.equal((await call('delete',{userId:id,confirm:'sample'},cookie)).status,200);assert.equal(sql.prepare('SELECT COUNT(*) n FROM users').get().n,0);assert.equal((await call('logout',{},cookie)).status,200);assert.equal((await call('users',null,cookie)).status,401);
+console.log('Admin: one-time setup, origin, authentication, permissions, limits, notifications, confirmed deletion and logout passed');

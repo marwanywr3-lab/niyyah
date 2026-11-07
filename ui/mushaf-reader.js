@@ -12,14 +12,14 @@ function indexVerses(book){
    const key=page.number+':'+surah+':'+lineNo,entries=[];index.set(key,entries);
    for(const part of line.split(/(\{\d+\})/g)){if(!part)continue;const match=part.match(/^\{(\d+)\}$/);
     if(!match){const item={text:part};entries.push(item);pending.get(surah).push(item);continue;}
-    const n=+match[1],prev=previous.get(surah)||0;for(const item of pending.get(surah)){item.ayah=n;item.reliable=n===prev+1;}
+    const n=+match[1],prev=previous.get(surah)||0,parts=pending.get(surah),verseText=parts.map(x=>x.text).join(' ').replace(/\{\s*س\s*\}/g,'').replace(/\s+/g,' ').trim();for(const item of parts){item.ayah=n;item.reliable=n===prev+1;item.verseText=verseText;}
     pending.set(surah,[]);previous.set(surah,n);entries.push({marker:n});
    }
   });
  }
  return index;
 }
-function indexedLine(items,surah){return items.map(item=>item.marker?'<button class="mushaf-stop" data-sana-surah="'+surah+'" data-sana-ayah="'+item.marker+'" aria-label="اسأل سَنا عن الآية '+item.marker+' حسب ترقيم الملف">'+Number(item.marker).toLocaleString('ar-SA')+'</button>':item.ayah?'<span class="mushaf-verse-fragment" data-verse="'+item.ayah+'" data-surah="'+surah+'" data-reliable="'+(item.reliable?'1':'0')+'">'+esc(item.text).replace(/\{\s*س\s*\}/g,'<span class="sajdah">۩</span>')+'</span>':esc(item.text)).join('');}
+function indexedLine(items,surah){return items.map(item=>item.marker?'<button class="mushaf-stop" data-sana-surah="'+surah+'" data-sana-ayah="'+item.marker+'" aria-label="اسأل سَنا عن الآية '+item.marker+' حسب ترقيم الملف">'+Number(item.marker).toLocaleString('ar-SA')+'</button>':item.ayah?'<span class="mushaf-verse-fragment" data-verse="'+item.ayah+'" data-surah="'+surah+'" data-reliable="'+(item.reliable?'1':'0')+'" data-verse-text="'+esc(item.verseText)+'">'+esc(item.text).replace(/\{\s*س\s*\}/g,'<span class="sajdah">۩</span>')+'</span>':esc(item.text)).join('');}
 function pageHTML(p,selected,bookmarks,index){
  return '<article class="mushaf-page '+(p.number%2?'right-page':'left-page')+'" data-mushaf-page="'+p.number+'" aria-label="صفحة '+p.number+'"'+(selected===p.number?' data-current="true"':'')+'><div class="mushaf-inner"><div class="mushaf-running"><span>'+p.sections.map(s=>esc(s.name)).join(' • ')+'</span><span>الجزء '+p.juz+'</span><button class="mushaf-page-save" data-bookmark-page="'+p.number+'" aria-pressed="'+bookmarks.includes(p.number)+'" aria-label="'+(bookmarks.includes(p.number)?'إلغاء حفظ':'حفظ')+' الصفحة '+p.number+'">'+(bookmarks.includes(p.number)?'◆ محفوظة':'◇ حفظ')+'</button></div>'+p.sections.map(s=>'<section class="mushaf-section" data-mushaf-surah="'+s.surah+'">'+(s.isStart?'<h2 class="mushaf-surah">سورة '+esc(s.name)+'</h2>':'')+s.lines.map((line,lineNo)=>plain(line)==='بسم الله الرحمن الرحيم'&&s.surah!==1?'<p class="mushaf-basmala">'+esc(line)+'</p>':'<div class="mushaf-line">'+indexedLine(index.get(p.number+':'+s.surah+':'+lineNo)||[],s.surah)+'</div>').join('')+'</section>').join('')+'<div class="mushaf-page-number">'+p.number.toLocaleString('ar-SA')+'</div></div></article>';
 }
@@ -55,7 +55,7 @@ export class MushafReader{
   this.content.innerHTML='<div class="section-title mushaf-heading"><div><span class="eyebrow">القرآن الكريم</span><h1>المصحف</h1></div><button id="continuousview">عرض الآيات والدراسة</button></div><div class="mushaf-commandbar"><button id="previouspage" data-turn="-1" aria-label="'+previousLabel+'" '+(back===null?'disabled':'')+'>→ <span>السابق</span></button><span class="mushaf-range">'+this.rangeHTML()+' <small>من 604</small></span><button id="nextpage" data-turn="1" aria-label="'+nextLabel+'" '+(next===null?'disabled':'')+'><span>التالي</span> ←</button><button id="mushaf-fullscreen" class="mushaf-fullscreen" aria-label="'+(this.full?'الخروج من ملء الشاشة':'ملء الشاشة')+'" title="'+(this.full?'الخروج من ملء الشاشة':'ملء الشاشة')+'" aria-pressed="'+this.full+'">'+fullscreenIcon+'<span class="fullscreen-caption">'+(this.full?'خروج':'ملء الشاشة')+'</span></button></div><details id="mushaf-options" class="mushaf-options" '+(open?'open':'')+'><summary>السورة والجزء وحجم الخط</summary><div class="mushaf-tools"><label>السورة<select id="mushafsurah">'+this.book.surahs.map(s=>'<option value="'+s.number+'" '+(s.number===activeSurah?'selected':'')+'>'+s.number+'. '+esc(s.name)+'</option>').join('')+'</select></label><label>الجزء<select id="mushafjuz">'+Array.from({length:30},(_,i)=>'<option value="'+(i+1)+'" '+(p.juz===i+1?'selected':'')+'>'+(i+1)+'</option>').join('')+'</select></label><label>الصفحة<input id="mushafnumber" type="number" inputmode="numeric" min="1" max="604" value="'+this.page+'"></label><button id="gotopage">انتقال</button><label class="mushaf-size">حجم الخط<input type="range" id="mushafscale" min="0.85" max="1.4" step="0.05" value="'+this.getScale()+'"></label><button id="downloadpages">حفظ دون اتصال</button><p id="mushaf-jump-error" role="alert"></p></div></details><p class="mushaf-gesture-hint">'+(this.paired?'وجهان متقابلان':'وجه واحد')+' • اضغط مطولًا على الآية لتفسيرها • اسحب لليسار للتالي، ولليمين للسابق</p><div id="mushafsurface" class="mushaf-spread '+(this.paired?'is-paired':'is-single')+'" style="--reading-scale:'+this.getScale()+'" tabindex="0" aria-label="'+this.range()+'؛ اسحب أو استخدم سهمي لوحة المفاتيح">'+pages.map(page=>pageHTML(page,this.page,this.getBookmarks(),this.verseIndex)).join('')+'</div><div class="mushaf-bottom-nav"><button data-turn="-1" aria-label="'+previousLabel+' من أسفل المصحف" '+(back===null?'disabled':'')+'>→ السابق</button><span>'+this.rangeHTML()+'</span><button data-turn="1" aria-label="'+nextLabel+' من أسفل المصحف" '+(next===null?'disabled':'')+'>التالي ←</button></div><div class="mushaf-foot"><p>تنسيق صفحات من ملف ARQURAN.TXT وخط Amiri Quran. ليس صورة أو مطابقة طباعية لمصحف المدينة. النص وترقيمه يحتاجان مراجعة مستقلة. <a href="page-import-report.json" target="_blank" rel="noopener">تفاصيل المصدر والمطابقة</a></p>'+(pages.some(x=>x.issues.length)?'<p class="notice">يوجد ترقيم غير منتظم في مصدر بعض الصفحات المعروضة؛ أُبقي كما ورد دون تصحيح صامت.</p>':'')+'</div>';
   const $=s=>this.content.querySelector(s),on=(s,type,fn)=>$(s).addEventListener(type,fn,{signal});
   this.content.querySelectorAll('[data-turn]').forEach(b=>b.addEventListener('click',()=>this.turn(+b.dataset.turn),{signal}));
-  this.content.querySelectorAll('[data-sana-ayah]').forEach(b=>b.addEventListener('click',()=>this.onAsk({kind:'verse',surah:+b.dataset.sanaSurah,ayah:+b.dataset.sanaAyah}),{signal}));
+  this.content.querySelectorAll('[data-sana-ayah]').forEach(b=>b.addEventListener('click',()=>{const surah=+b.dataset.sanaSurah,ayah=+b.dataset.sanaAyah;let item;for(const [key,parts] of this.verseIndex){if(key.split(':')[1]===String(surah)){item=parts.find(x=>x.ayah===ayah);if(item)break;}}this.onAsk({kind:'verse',surah,ayah,words:item?.verseText,unverified:!item?.reliable});},{signal}));
   this.content.querySelectorAll('[data-bookmark-page]').forEach(b=>b.addEventListener('click',()=>{this.onBookmark(+b.dataset.bookmarkPage);this.draw();},{signal}));
   on('#gotopage','click',()=>this.jump(+$('#mushafnumber').value));
   on('#mushafnumber','keydown',e=>{if(e.key==='Enter'){e.preventDefault();this.jump(+e.target.value);}});
@@ -70,7 +70,7 @@ export class MushafReader{
  }
  jump(n){if(!Number.isInteger(n)||n<1||n>604){this.content.querySelector('#mushaf-jump-error').textContent='أدخل رقم صفحة من 1 إلى 604';return;}this.go(n);}
  go(n,surah=null){if(!Number.isInteger(n)||n<1||n>604)return;this.page=n;this.surah=surah;this.draw();this.scrollBook();}
- turn(direction){const target=turnTarget(this.page,direction,this.paired);if(target!==null)this.go(target);}
+ turn(direction,animate=false){const target=turnTarget(this.page,direction,this.paired);if(target===null)return;if(animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const surface=this.content.querySelector('#mushafsurface');surface.classList.add(direction>0?'turn-out-next':'turn-out-previous');setTimeout(()=>{if(!this.root.isConnected)return;this.go(target);this.content.querySelector('#mushafsurface')?.classList.add(direction>0?'turn-in-next':'turn-in-previous');},150);}else this.go(target);}
  keydown(e){
   if(this.modal?.open||['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName)||e.target.isContentEditable||e.ctrlKey||e.metaKey||e.altKey)return;
   if(e.key==='Escape'&&this.fallback){e.preventDefault();this.leaveFocus();return;}
@@ -81,7 +81,7 @@ export class MushafReader{
   if(e.button!==0||this.modal?.open||!e.target.closest('#mushafsurface')||e.target.closest('a,input,select,textarea,.mushaf-page-save'))return;
   this.pointer={id:e.pointerId,x:e.clientX,y:e.clientY,time:performance.now(),type:e.pointerType};
   const fragment=e.target.closest('.mushaf-verse-fragment');
-  if(fragment){const pointer=this.pointer;this.holdTimer=setTimeout(()=>{if(this.pointer!==pointer||pointer.multiple)return;this.suppressClick=true;this.cancelPointer();this.clickTimer=setTimeout(()=>this.suppressClick=false,500);this.onAsk({kind:'verse',surah:+fragment.dataset.surah,ayah:+fragment.dataset.verse,unverified:fragment.dataset.reliable!=='1',words:fragment.textContent});},600);}
+  if(fragment){const pointer=this.pointer;this.holdTimer=setTimeout(()=>{if(this.pointer!==pointer||pointer.multiple)return;this.suppressClick=true;this.cancelPointer();this.clickTimer=setTimeout(()=>this.suppressClick=false,500);this.onAsk({kind:'verse',surah:+fragment.dataset.surah,ayah:+fragment.dataset.verse,unverified:fragment.dataset.reliable!=='1',words:fragment.dataset.verseText||fragment.textContent});},600);}
   // A mouse can drag the sheet; touch remains native for vertical scroll and pinch zoom.
   if(e.pointerType==='mouse')e.preventDefault();
  }
@@ -94,7 +94,7 @@ export class MushafReader{
  pointerUp(e){
   if(!this.pointer||e.pointerId!==this.pointer.id)return;
   const direction=swipeTurn(this.pointer,{x:e.clientX,y:e.clientY,time:performance.now()});this.cancelPointer();
-  if(direction){this.suppressClick=true;clearTimeout(this.clickTimer);this.clickTimer=setTimeout(()=>this.suppressClick=false,350);this.turn(direction);}
+  if(direction){this.suppressClick=true;clearTimeout(this.clickTimer);this.clickTimer=setTimeout(()=>this.suppressClick=false,350);this.turn(direction,true);}
  }
  cancelPointer(){clearTimeout(this.holdTimer);this.pointer=null;this.root.classList.remove('is-swiping');}
  moveModal(){for(const node of [this.modal,document.querySelector('#toast')])if(node&&!this.root.contains(node))this.root.appendChild(node);}

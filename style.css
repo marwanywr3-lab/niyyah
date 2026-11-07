@@ -85,3 +85,5 @@ dialog>.row:first-child{position:sticky;top:-26px;z-index:3;background:var(--pap
 .sync-badge{font-size:11px;color:var(--muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media(max-width:600px){.sync-badge{max-width:74px;font-size:10px}}
 
 .study-surahs summary{cursor:pointer;font-weight:600;padding:8px 0}.study-surahs[open] #surahs{max-height:210px;overflow:auto}
+
+@keyframes mushaf-out-next{to{opacity:.35;transform:translateX(-5%) scale(.985)}}@keyframes mushaf-out-previous{to{opacity:.35;transform:translateX(5%) scale(.985)}}@keyframes mushaf-in-next{from{opacity:.35;transform:translateX(5%) scale(.985)}to{opacity:1;transform:none}}@keyframes mushaf-in-previous{from{opacity:.35;transform:translateX(-5%) scale(.985)}to{opacity:1;transform:none}}.turn-out-next{animation:mushaf-out-next .15s ease-in forwards}.turn-out-previous{animation:mushaf-out-previous .15s ease-in forwards}.turn-in-next{animation:mushaf-in-next .22s ease-out}.turn-in-previous{animation:mushaf-in-previous .22s ease-out}.share-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
