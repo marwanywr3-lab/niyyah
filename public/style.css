@@ -81,3 +81,7 @@ body.mushaf-fullscreen-active{overflow:hidden}
 
 /* Controls for verse study and comfortable reading. */
 dialog>.row:first-child{position:sticky;top:-26px;z-index:3;background:var(--paper);padding:8px 0}.quranpedia-frame{display:block;width:100%;height:420px;border:1px solid var(--line);border-radius:10px;background:#fff}.verse-word-choices,.saved-verses{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.verse-word-choices button{padding:6px 10px;font-family:AmiriQuran,serif;font-size:18px}.mushaf-verse-fragment{-webkit-touch-callout:none}.dark .primary{color:#17251b}.dark .muted{color:#c6d1c1}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}@media(max-width:600px){.header-actions{gap:4px}.header-actions button{padding:8px}.quranpedia-frame{height:55vh}.section-title>div>button{font-size:12px}}
+
+.sync-badge{font-size:11px;color:var(--muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media(max-width:600px){.sync-badge{max-width:74px;font-size:10px}}
+
+.study-surahs summary{cursor:pointer;font-weight:600;padding:8px 0}.study-surahs[open] #surahs{max-height:210px;overflow:auto}

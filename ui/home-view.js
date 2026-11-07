@@ -5,7 +5,7 @@ export function homeMarkup({p,tomorrow,state,labels,fmt,esc}){
  <div class="grid home-grid">
  <section class="card prayer"><div class="row"><span>الصلاة القادمة</span><button id="city">${esc(state.city)}</button></div>
  <div class="prayer-main"><h2>${labels[next]||'الفجر غدًا'}</h2><div class="big">${time?fmt(time):'—'}</div></div>
- <p>${time?'متبقي '+Math.max(0,Math.ceil((time-new Date())/60000))+' دقيقة':'اكتملت مواقيت اليوم'}</p>
+ <p id="next-prayer-remaining">${time?'متبقي '+Math.max(0,Math.ceil((time-new Date())/60000))+' دقيقة':'اكتملت مواقيت اليوم'}</p>
  <div class="times">${Object.entries(labels).map(([k,l])=>`<div class="${next===k?'current':''}"><small>${l}</small><strong>${fmt(p[k])}</strong></div>`).join('')}</div>
  <small>${esc(state.city)} • ${esc(state.method)} • توقيت الجهاز</small></section>
  <section class="card verse"><div class="reading-label">${uiIcon('quran')}<span>القرآن الكريم</span></div><h2>متابعة القراءة</h2>
