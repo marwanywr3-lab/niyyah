@@ -54,6 +54,7 @@ async function reader(){
   if(section!==1)return;
   const page=Math.max(1,Math.min(604,state.lastPage||pageBook.surahs.find(s=>s.number===(state.lastSurah||1))?.firstPage||1));
   mushafReader=new MushafReader({host:$('#view'),book:pageBook,page,surah:state.lastSurah,
+   getLayout:()=>state.mushafLayout||'auto',onLayout:mode=>{state.mushafLayout=mode;save();},
    getScale:()=>Math.min(1.4,Math.max(0.85,Number(state.mushafScale)||1)),getBookmarks:()=>Array.isArray(state.pageBookmarks)?state.pageBookmarks:[],
    onPosition:(page,surah)=>{state.lastPage=page;state.lastSurah=surah;save();},
    onScale:scale=>{state.mushafScale=scale;save();},

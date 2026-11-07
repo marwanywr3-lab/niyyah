@@ -89,3 +89,20 @@ dialog>.row:first-child{position:sticky;top:-26px;z-index:3;background:var(--pap
 @keyframes mushaf-out-next{to{opacity:.35;transform:translateX(-5%) scale(.985)}}@keyframes mushaf-out-previous{to{opacity:.35;transform:translateX(5%) scale(.985)}}@keyframes mushaf-in-next{from{opacity:.35;transform:translateX(5%) scale(.985)}to{opacity:1;transform:none}}@keyframes mushaf-in-previous{from{opacity:.35;transform:translateX(-5%) scale(.985)}to{opacity:1;transform:none}}.turn-out-next{animation:mushaf-out-next .15s ease-in forwards}.turn-out-previous{animation:mushaf-out-previous .15s ease-in forwards}.turn-in-next{animation:mushaf-in-next .22s ease-out}.turn-in-previous{animation:mushaf-in-previous .22s ease-out}.share-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 
 .install-section{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding:20px 0}.install-section p{margin:4px 0 0;color:var(--muted);font-size:13px}.install-section button{white-space:nowrap}.install-section[hidden]{display:none}@media(max-width:380px){.install-section{align-items:flex-start;flex-direction:column}}
+
+/* Comfortable layouts for narrow covers and open foldables. */
+@media(max-width:900px){
+ .sidebar,body.mushaf-reading .sidebar{top:auto;bottom:0;left:0;right:0;width:100%;height:calc(70px + env(safe-area-inset-bottom,0px));padding:0 0 env(safe-area-inset-bottom,0px);z-index:5;border-left:0;border-top:1px solid var(--line)}
+ .sidebar .logo,.sidebar .tagline,.sidebar .sidebar-bottom{display:none}
+ .sidebar nav{display:flex;height:100%;width:100%}.sidebar nav button{min-width:0;flex:1;padding:7px 2px;margin:0;border:0;border-top:2px solid transparent;border-radius:0;font-size:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}.sidebar nav button.active{border-top-color:var(--sage)}.sidebar nav svg{width:19px;height:19px}
+ main,body.mushaf-reading main{margin:0;max-width:none;padding:0 max(16px,env(safe-area-inset-right,0px)) calc(90px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+ header{min-height:76px;height:auto;gap:6px;padding-block:10px}.header-actions{justify-content:flex-end;flex-wrap:wrap;gap:2px}.header-actions button{min-height:40px;padding:7px 8px}.sync-badge{max-width:100px}
+ .section-title{gap:12px;flex-wrap:wrap}.section-title>div{min-width:0}.section-title>div:last-child{display:flex;gap:6px;flex-wrap:wrap}
+ .verse-actions,.dhikr-counter{flex-wrap:wrap}.verse-actions button{min-height:40px}.times{flex-wrap:wrap;justify-content:flex-start}.times div{min-width:48px}
+ dialog{max-width:calc(100vw - 24px);max-height:calc(100dvh - 32px);overflow:auto}.quranpedia-frame{max-height:55dvh}
+}
+@media(min-width:600px) and (max-width:900px){
+ .home-grid,.discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-grid .verse{border-top:0;border-inline-start:1px solid var(--line);padding:24px}.grid:not(.home-grid):not(.discovery-grid){grid-template-columns:repeat(2,minmax(0,1fr))}.reader-layout{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:360px){header{align-items:flex-start}header>div:first-child{min-width:54px}.header-actions button{font-size:12px;padding-inline:5px}.sana-launcher{min-width:40px}.sync-badge{max-width:70px}.card{padding:18px}.mushaf-spread .mushaf-inner{padding-inline:8px}}
+@media(horizontal-viewport-segments:2){.mushaf-reader:fullscreen .mushaf-spread.is-paired,.mushaf-reader.is-focus .mushaf-spread.is-paired{column-gap:calc(env(viewport-segment-left 1 0) - env(viewport-segment-right 0 0))}}

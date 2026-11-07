@@ -12,6 +12,7 @@ for(let page=1;page<=604;page++){
 }
 assert.deepEqual(spreadPages(603,true,603),[603]);
 for(const [w,h,available,expected] of [[360,740,328,false],[390,844,358,false],[568,320,536,true],[667,375,635,true],[600,900,568,true],[768,1024,736,true],[720,900,688,true],[1366,900,1098,true],[1366,900,420,false]])assert.equal(useFacingPages(w,h,available),expected,w+'x'+h);
+assert.equal(useFacingPages(720,960,688,'single'),false);assert.equal(useFacingPages(720,960,688,'paired'),true);assert.equal(useFacingPages(360,800,328,'paired'),false);assert.equal(useFacingPages(540,960,508,'auto'),false);assert.equal(useFacingPages(540,960,508,'paired'),true);
 const start={x:250,y:300,time:0};
 assert.equal(swipeTurn(start,{x:110,y:308,time:300}),1);assert.equal(swipeTurn(start,{x:370,y:310,time:400}),-1);assert.equal(swipeTurn(start,{x:110,y:308,time:300},true),-1);assert.equal(swipeTurn(start,{x:370,y:310,time:400},true),1);assert.equal(turnTarget(3,swipeTurn(start,{x:110,y:308,time:300},true),true),1);assert.equal(turnTarget(3,swipeTurn(start,{x:370,y:310,time:400},true),true),5);
 for(const end of [{x:210,y:300,time:100},{x:180,y:410,time:300},{x:100,y:300,time:1200},{x:100,y:300,time:250,cancelled:true}])assert.equal(swipeTurn(start,end),0);
