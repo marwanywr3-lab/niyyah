@@ -13,5 +13,5 @@ export function homeMarkup({p,tomorrow,state,labels,fmt,esc}){
  <button class="primary" id="resume">افتح المصحف <span aria-hidden="true">←</span></button><small>النص قيد المراجعة؛ تفاصيل المصدر داخل المصحف.</small></section>
  <section class="home-shortcut"><div><h2>عباداتي</h2><p>سجل الصلاة، الأذكار ودعواتك الخاصة.</p></div><button data-go="2">فتح عباداتي <span aria-hidden="true">←</span></button></section>
  <section class="home-shortcut sana-card"><div class="mascot"><i></i><i></i></div><div><h2>سَنا</h2><p>المساعدة في التطبيق والبحث في المكتبة الموثقة.</p></div><button data-go="4">تحدث مع سَنا <span aria-hidden="true">←</span></button></section>
- </div><div class="local-data-note"><span>الحفظ على هذا الجهاز</span><p>تجد تصدير بياناتك والنسخ الاحتياطي في الإعدادات.</p></div>`;
+ </div><div class="install-section" id="install-section"><div><strong>نِيّة على جهازك</strong><p>ثبّت التطبيق للوصول إليه من شاشتك الرئيسية.</p></div><button id="install-niyyah">تحميل نِيّة</button></div><div class="local-data-note"><span>الحفظ على هذا الجهاز</span><p>تجد تصدير بياناتك والنسخ الاحتياطي في الإعدادات.</p></div>`;
 }

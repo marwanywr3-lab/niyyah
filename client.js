@@ -9,6 +9,7 @@ import {knowledge as religiousKnowledge} from './data/knowledge-source.mjs';
 import {entries as adhkarEntries,categories as adhkarCategories} from './data/adhkar-source.mjs';
 import {Coordinates,CalculationMethod,PrayerTimes,Madhab,Qibla} from 'adhan';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let installPrompt=null;window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;});window.addEventListener('appinstalled',()=>{installPrompt=null;const node=document.querySelector('#install-section');if(node)node.hidden=true;});
 const names=['يومي','القرآن','عباداتي','اكتشف','سَنا'];let section=0,quran=[],selected=1;
 let activeStateKey='niyyah-v1',syncEngine=null;
 let state=JSON.parse(localStorage.getItem(activeStateKey)||'{"prayers":{},"notes":[],"duas":[],"bookmarks":[],"city":"الرياض","lat":24.7136,"lng":46.6753,"method":"UmmAlQura","madhab":0,"dark":false,"offset":0}');
@@ -36,8 +37,13 @@ function bind(){document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>
 function syncBadge(){const b=$('#sync-badge');if(!b)return;b.textContent=!user?'حفظ محلي':syncEngine?.status||'المزامنة مقفلة';b.title='اضغط لإعداد المزامنة';b.onclick=()=>user?syncPanel():account();}
 function shell(){document.body.classList.toggle('dark',state.dark);document.body.classList.toggle('mushaf-reading',section===1&&state.readerMode!=='continuous');$('#nav').innerHTML=names.map((n,i)=>`<button data-go="${i}" class="${section===i?'active':''}" ${section===i?'aria-current="page"':''}><span>${uiIcon(['daily','quran','worship','discover','sana'][i])}</span>${n}</button>`).join('');$('#heading').textContent=names[section];$('#date').textContent=hijri();$('#sana-launcher').onclick=()=>quickSana();const theme=$('#theme-toggle');theme.textContent=state.dark?'☀':'☾';theme.setAttribute('aria-label',state.dark?'تفعيل الوضع الفاتح':'تفعيل الوضع الداكن');theme.onclick=()=>{state.dark=!state.dark;save();shell();};$('#account').textContent=user?'حسابي •':'حسابي';syncBadge();bind();}
 function render(){mushafReader?.destroy();mushafReader=null;document.onkeydown=null;shell();[home,reader,worship,discover,sana][section]();}
-function home(){$('#view').innerHTML=homeMarkup({p:prayers(),tomorrow:(()=>{const d=new Date();d.setDate(d.getDate()+1);return new PrayerTimes(new Coordinates(+state.lat,+state.lng),d,params());})(),state,labels,fmt,esc});bind();$('#city').onclick=settings;$('#resume').onclick=()=>{selected=state.lastSurah||1;section=1;render();};}
+function home(){$('#view').innerHTML=homeMarkup({p:prayers(),tomorrow:(()=>{const d=new Date();d.setDate(d.getDate()+1);return new PrayerTimes(new Coordinates(+state.lat,+state.lng),d,params());})(),state,labels,fmt,esc});bind();const install=$('#install-section');if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)install.hidden=true;$('#install-niyyah').onclick=installNiyyah;$('#city').onclick=settings;$('#resume').onclick=()=>{selected=state.lastSurah||1;section=1;render();};}
 
+async function installNiyyah(){
+ if(installPrompt){const prompt=installPrompt;installPrompt=null;try{await prompt.prompt();await prompt.userChoice;}catch{installInstructions();}return;}
+ installInstructions();
+}
+function installInstructions(){const ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);const android=/Android/i.test(navigator.userAgent);const help=ios?'افتح الموقع في Safari، ثم اضغط زر المشاركة واختر «إضافة إلى الشاشة الرئيسية»، ثم «إضافة».':android?'افتح قائمة المتصفح ⋮ واختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».':'افتح قائمة المتصفح واختر «تثبيت نِيّة» أو «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية». قد يظهر رمز التثبيت في شريط العنوان.';dialog('تحميل نِيّة','<p>يمكنك تثبيت نِيّة كتطبيق ويب على جهازك.</p><p>'+help+'</p><p class="muted">تختلف الخيارات حسب المتصفح. إذا لم تظهر، افتح الموقع في Safari على iPhone أو Chrome على Android.</p>');}
 let pageBook=null,mushafReader=null,targetVerse=null;
 async function reader(){
  mushafReader?.destroy();mushafReader=null;document.body.classList.toggle('mushaf-reading',state.readerMode!=='continuous');
