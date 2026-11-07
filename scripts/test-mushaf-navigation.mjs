@@ -13,13 +13,14 @@ for(let page=1;page<=604;page++){
 assert.deepEqual(spreadPages(603,true,603),[603]);
 for(const [w,h,available,expected] of [[360,740,328,false],[390,844,358,false],[568,320,536,true],[667,375,635,true],[600,900,568,true],[768,1024,736,true],[720,900,688,true],[1366,900,1098,true],[1366,900,420,false]])assert.equal(useFacingPages(w,h,available),expected,w+'x'+h);
 const start={x:250,y:300,time:0};
-assert.equal(swipeTurn(start,{x:110,y:308,time:300}),1);assert.equal(swipeTurn(start,{x:370,y:310,time:400}),-1);
+assert.equal(swipeTurn(start,{x:110,y:308,time:300}),1);assert.equal(swipeTurn(start,{x:370,y:310,time:400}),-1);assert.equal(swipeTurn(start,{x:110,y:308,time:300},true),-1);assert.equal(swipeTurn(start,{x:370,y:310,time:400},true),1);assert.equal(turnTarget(3,swipeTurn(start,{x:110,y:308,time:300},true),true),1);assert.equal(turnTarget(3,swipeTurn(start,{x:370,y:310,time:400},true),true),5);
 for(const end of [{x:210,y:300,time:100},{x:180,y:410,time:300},{x:100,y:300,time:1200},{x:100,y:300,time:250,cancelled:true}])assert.equal(swipeTurn(start,end),0);
 assert.equal(swipeTurn({...start,multiple:true},{x:100,y:300,time:200}),0);
 const html=pageTextMarkup('نص <script> {12} (5} {س}',2);assert.ok(html.includes('&lt;script&gt;'));assert.ok(html.includes('data-sana-surah="2"'));assert.ok(html.includes('data-sana-ayah="12"'));assert.ok(html.includes('(5}'),'Malformed source text is preserved, never corrected');
 const turns=[];const mocked={root:{classList:{add(){},remove(){}}},modal:null,turn:d=>turns.push(d),cancelPointer:MushafReader.prototype.cancelPointer};
 mocked.pointer={...start,id:1,time:performance.now()-100};MushafReader.prototype.pointerUp.call(mocked,{pointerId:1,clientX:100,clientY:300});assert.deepEqual(turns,[1]);assert.equal(mocked.pointer,null);clearTimeout(mocked.clickTimer);
-mocked.pointer={...start,id:1,time:performance.now()-100,multiple:true};MushafReader.prototype.pointerUp.call(mocked,{pointerId:1,clientX:100,clientY:300});assert.deepEqual(turns,[1]);
+mocked.paired=true;mocked.pointer={...start,id:1,time:performance.now()-100};MushafReader.prototype.pointerUp.call(mocked,{pointerId:1,clientX:100,clientY:300});assert.deepEqual(turns,[1,-1]);clearTimeout(mocked.clickTimer);
+mocked.pointer={...start,id:1,time:performance.now()-100,multiple:true};MushafReader.prototype.pointerUp.call(mocked,{pointerId:1,clientX:100,clientY:300});assert.deepEqual(turns,[1,-1]);
 const targeted={closest:selector=>selector==='#mushafsurface'?{}:null};
 MushafReader.prototype.pointerDown.call(mocked,{isPrimary:true,button:0,pointerId:2,pointerType:'touch',clientX:250,clientY:300,target:targeted});
 MushafReader.prototype.pointerDown.call(mocked,{isPrimary:false});assert.equal(mocked.pointer.multiple,true,'Pinch/multi-touch must not turn a page');
