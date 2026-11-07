@@ -78,3 +78,6 @@ body.mushaf-fullscreen-active{overflow:hidden}
  .mushaf-spread .mushaf-inner{padding-inline:12px}.mushaf-gesture-hint{font-size:11px}.mushaf-bottom-nav{gap:6px}.mushaf-bottom-nav button{padding:8px 10px;font-size:12px}
 }
 @media(orientation:landscape) and (max-height:600px){body.mushaf-reading header{height:66px}.mushaf-reader .mushaf-heading{padding:10px 0}.mushaf-commandbar{padding-block:6px}.mushaf-gesture-hint{margin:6px 0}.mushaf-spread .mushaf-running{font-size:10px}}
+
+/* Controls for verse study and comfortable reading. */
+dialog>.row:first-child{position:sticky;top:-26px;z-index:3;background:var(--paper);padding:8px 0}.quranpedia-frame{display:block;width:100%;height:420px;border:1px solid var(--line);border-radius:10px;background:#fff}.verse-word-choices,.saved-verses{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.verse-word-choices button{padding:6px 10px;font-family:AmiriQuran,serif;font-size:18px}.mushaf-verse-fragment{-webkit-touch-callout:none}.dark .primary{color:#17251b}.dark .muted{color:#c6d1c1}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}@media(max-width:600px){.header-actions{gap:4px}.header-actions button{padding:8px}.quranpedia-frame{height:55vh}.section-title>div>button{font-size:12px}}

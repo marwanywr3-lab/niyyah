@@ -1,6 +1,6 @@
 import {uiIcon} from './icons.js';
-export function homeMarkup({p,state,labels,fmt,esc}){
- const next=p.nextPrayer(),time=p.timeForPrayer(next);
+export function homeMarkup({p,tomorrow,state,labels,fmt,esc}){
+ const next=p.nextPrayer(),time=next?p.timeForPrayer(next):tomorrow.fajr;
  return `<div class="intro home-intro"><h1>يومك في نِيّة</h1><p>مواقيتك وقراءتك، من مكان واحد.</p></div>
  <div class="grid home-grid">
  <section class="card prayer"><div class="row"><span>الصلاة القادمة</span><button id="city">${esc(state.city)}</button></div>
